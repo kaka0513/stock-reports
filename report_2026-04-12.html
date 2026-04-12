@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-12 13:02</title>
+<title>股票分析報告 - 2026-04-12 13:33</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -228,17 +228,67 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 @media (max-width: 768px) { .action-card { grid-template-columns: 1fr; } .action-prices { flex-direction: column; } }
 .chart-interactive { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; position: relative; }
 .chart-interactive::after { content: '互動模式 ON — 雙擊關閉'; position: absolute; top: 4px; right: 8px; font-size: 0.65rem; color: var(--accent); background: rgba(15,23,42,0.85); padding: 2px 8px; border-radius: 4px; z-index: 10; pointer-events: none; }
+/* 個股開合設計 */
+.stock-details { margin-top: 0.5rem; }
+.stock-toggle { cursor: pointer; color: var(--accent); font-size: 0.85rem; font-weight: 600; padding: 0.5rem 0; user-select: none; list-style: none; }
+.stock-toggle::-webkit-details-marker { display: none; }
+.stock-details[open] > .stock-toggle { color: var(--muted); }
+.stock-details[open] > .stock-toggle::before { content: '▼ '; }
+.stock-toggle::before { content: '▶ '; }
+.stock-toggle { list-style: none; }
+.expand-all-btn { display: inline-block; padding: 0.4rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; color: var(--accent); font-size: 0.82rem; cursor: pointer; margin-bottom: 1rem; }
+.expand-all-btn:hover { background: rgba(96,165,250,0.1); }
+/* 回到頂部按鈕 */
+.back-to-top { display: none; position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 90; width: 44px; height: 44px; border-radius: 50%; background: rgba(96,165,250,0.9); color: white; border: none; font-size: 1.3rem; cursor: pointer; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.back-to-top:hover { background: rgba(96,165,250,1); }
+/* 手機漢堡選單 */
+.nav-toggle { display: none; position: fixed; top: 0.6rem; left: 0.6rem; z-index: 200; background: rgba(11,17,32,0.9); border: 1px solid var(--border); border-radius: 8px; width: 40px; height: 40px; cursor: pointer; align-items: center; justify-content: center; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text); margin: 4px auto; transition: all 0.3s; }
+.nav-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 99; }
 @media (max-width: 768px) {
-    body { padding: 1rem; padding-left: 1rem; }
-    .side-nav { display: none; }
-    .chart-row.main { height: 300px; }
-    .chart-row.sub { height: 150px; }
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    .summary-bar { flex-direction: column; align-items: center; }
+    body { padding: 1rem; padding-left: 1rem; padding-top: 3.5rem; }
+    .nav-toggle { display: flex; }
+    .side-nav { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 150; }
+    .side-nav.open { transform: translateX(0); }
+    .nav-backdrop.open { display: block; }
+    h1 { font-size: 1.3rem; }
+    .stock-header h2 { font-size: 1rem; }
+    .chart-row.main { height: 280px; }
+    .chart-row.sub { height: 140px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    .metric { padding: 0.4rem 0.6rem; }
+    .metric .value { font-size: 0.85rem; }
+    .summary-bar { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .stock-card { padding: 1rem; margin-bottom: 1.2rem; }
+    .trading-sheet { padding: 0.8rem; }
+    .trading-sheet .ts-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .trading-sheet .ts-bias { margin-left: 0; }
+    .trading-sheet .ts-plan-row { flex-direction: column; }
+    .trading-sheet .ts-levels { flex-direction: column; gap: 0.3rem; }
+    .trading-sheet .ts-targets { flex-direction: column; }
+    .trading-plan-box { flex-direction: column; gap: 0.3rem; font-size: 0.82rem; }
+    .action-card { grid-template-columns: 1fr; gap: 0.8rem; }
+    .action-prices { flex-direction: column; }
+    .short-term-card { grid-template-columns: 1fr; }
+    .st-prices { flex-wrap: wrap; }
+    .val-grid { grid-template-columns: repeat(2, 1fr); }
+    .cost-zone-box .cost-grid { grid-template-columns: repeat(2, 1fr); }
+    .analysis-text { font-size: 0.82rem; line-height: 1.7; }
+    .screen-table { font-size: 0.75rem; }
+    .screen-table th, .screen-table td { padding: 0.4rem 0.5rem; }
+    .investor-fit-box .fit-row { flex-wrap: wrap; }
+    .catalyst-box .cat-row { flex-wrap: wrap; }
+    .pred-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
+
+<!-- 手機漢堡按鈕 -->
+<button class="nav-toggle" onclick="document.querySelector('.side-nav').classList.toggle('open');document.querySelector('.nav-backdrop').classList.toggle('open');" aria-label="選單">
+    <span></span><span></span><span></span>
+</button>
+<div class="nav-backdrop" onclick="document.querySelector('.side-nav').classList.remove('open');this.classList.remove('open');"></div>
 
 <nav class="side-nav">
     <img src="logo.png" alt="logo" class="nav-logo" onerror="this.style.display='none'">
@@ -271,7 +321,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(245,158,11,0.25);color:var(--yellow);font-size:0.75rem;vertical-align:middle">純觀察版</span></h1>
-<p class="subtitle">2026-04-12 13:02　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
+<p class="subtitle">2026-04-12 13:33　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">18</div><div class="label">分析股票數</div></div>
@@ -401,6 +451,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </table>
 
 <h3 class="section-title">個股分析</h3>
+<button class="expand-all-btn" onclick="var d=document.querySelectorAll('.stock-details');var allOpen=Array.from(d).every(function(x){return x.open;});d.forEach(function(x){x.open=!allOpen;});this.textContent=allOpen?'全部展開':'全部收合';">全部展開</button>
 <h3 class="section-title market-section" id="section-tw">台股分析</h3>
 
 <div class="stock-card" id="stock-2383">
@@ -450,7 +501,10 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>3136.27</b></span>｜<span class="tp-item">突破 <b>3435.00</b></span>｜<span class="tp-item tp-stop">停損 <b>3105.22</b>（-9.2%）</span>｜<span class="tp-item tp-target">目標 <b>3839.71</b>（+12.3%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">3082.31</span><span class="cost-delta cost-up">+11.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2825.22</span><span class="cost-delta cost-up">+21.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">2198.40</span><span class="cost-delta cost-up">+55.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2973.70</span><span class="cost-delta cost-up">+15.0% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">3082.31</span><span class="cost-delta cost-up">+11.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2825.22</span><span class="cost-delta cost-up">+21.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">2198.40</span><span class="cost-delta cost-up">+55.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2955.78</span><span class="cost-delta cost-up">+15.7% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
 
@@ -469,7 +523,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bullish"><span class="label">趨勢</span><span class="value">多頭排列</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">2825.22</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">2198.40</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2973.70</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2955.78</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -500,21 +554,21 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--red)">+13 張</span>
-                        <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
+                        <span class="inst-val" style="color:var(--red)">+719 張</span>
+                        <span class="inst-detail">買超 5 日 / 賣超 5 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--red)">+918 張</span>
+                        <span class="inst-val" style="color:var(--red)">+1.1 千張</span>
                         <span class="inst-detail">買超 9 日 / 賣超 1 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--red)">+77 張</span>
+                        <span class="inst-val" style="color:var(--red)">+45 張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--red)">+1.0 千張</span>
+                        <span class="inst-val" style="color:var(--red)">+1.8 千張</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -558,12 +612,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+11 張</td>
                         <td style="color:var(--red)">+367 張</td>
                     </tr><tr>
-                        <td>03/31</td>
-                        <td style="color:var(--green)">-106 張</td>
-                        <td style="color:var(--red)">+52 張</td>
-                        <td style="color:var(--green)">-9 張</td>
-                        <td style="color:var(--green)">-62 張</td>
-                    </tr><tr>
                         <td>03/30</td>
                         <td style="color:var(--green)">-461 張</td>
                         <td style="color:var(--green)">-32 張</td>
@@ -581,6 +629,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+56 張</td>
                         <td style="color:var(--green)">-7 張</td>
                         <td style="color:var(--red)">+513 張</td>
+                    </tr><tr>
+                        <td>03/25</td>
+                        <td style="color:var(--red)">+601 張</td>
+                        <td style="color:var(--red)">+196 張</td>
+                        <td style="color:var(--green)">-41 張</td>
+                        <td style="color:var(--red)">+757 張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -636,6 +690,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-0"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-0"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -958,6 +1014,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>16.49</b></span>｜<span class="tp-item">突破 <b>18.35</b></span>｜<span class="tp-item tp-stop">停損 <b>16.33</b>（-10.0%）</span>｜<span class="tp-item tp-target">目標 <b>20.58</b>（+13.4%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">17.55</span><span class="cost-delta cost-up">+3.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">16.90</span><span class="cost-delta cost-up">+7.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">16.06</span><span class="cost-delta cost-up">+13.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">17.01</span><span class="cost-delta cost-up">+6.7% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     <div class="short-term-card bearish">
@@ -1110,7 +1169,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-card">
                     <span class="inst-label">融資餘額</span>
                     <span class="inst-val">223 張</span>
-                    <span class="inst-detail" style="color:var(--red)">變化 +39 張</span>
+                    <span class="inst-detail" style="color:var(--red)">變化 +44 張</span>
                 </div>
                 <div class="inst-card">
                     <span class="inst-label">融券餘額</span>
@@ -1155,6 +1214,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-1"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-1"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -1477,6 +1538,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>1950.46</b></span>｜<span class="tp-item">突破 <b>2361.30</b></span>｜<span class="tp-item tp-stop">停損 <b>1931.15</b>（-16.6%）</span>｜<span class="tp-item tp-target">目標 <b>2826.8</b>（+22.1%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2032.77</span><span class="cost-delta cost-up">+13.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1780.77</span><span class="cost-delta cost-up">+30.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1186.68</span><span class="cost-delta cost-up">+95.1% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
@@ -1558,6 +1622,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-2"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-2"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -1880,6 +1946,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>25.74</b></span>｜<span class="tp-item">突破 <b>28.00</b></span>｜<span class="tp-item tp-stop">停損 <b>22.81</b>（-12.3%）</span>｜<span class="tp-item tp-target">目標 <b>30.25</b>（+16.3%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">26.02</span><span class="cost-delta cost-down">-0.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">27.98</span><span class="cost-delta cost-down">-7.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">25.80</span><span class="cost-delta cost-up">+0.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">25.20</span><span class="cost-delta cost-up">+3.2% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     
@@ -2065,6 +2134,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-3"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-3"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -2387,6 +2458,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>3836.75</b></span>｜<span class="tp-item">突破 <b>4290.00</b></span>｜<span class="tp-item tp-stop">停損 <b>3767.49</b>（-8.7%）</span>｜<span class="tp-item tp-target">目標 <b>4601.68</b>（+11.6%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">3962.73</span><span class="cost-delta cost-up">+4.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">3815.51</span><span class="cost-delta cost-up">+8.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">3149.47</span><span class="cost-delta cost-up">+31.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">3985.94</span><span class="cost-delta cost-up">+3.5% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     <div class="short-term-card bearish">
@@ -2584,6 +2658,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-4"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-4"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -2906,6 +2982,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>2082.14</b></span>｜<span class="tp-item">突破 <b>2371.50</b></span>｜<span class="tp-item tp-stop">停損 <b>2061.52</b>（-11.3%）</span>｜<span class="tp-item tp-target">目標 <b>2676.31</b>（+15.1%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2148.71</span><span class="cost-delta cost-up">+8.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2047.90</span><span class="cost-delta cost-up">+13.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1750.54</span><span class="cost-delta cost-up">+32.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2117.09</span><span class="cost-delta cost-up">+9.8% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
@@ -3092,6 +3171,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-5"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-5"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -3414,6 +3495,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>506.23</b></span>｜<span class="tp-item">突破 <b>528.00</b></span>｜<span class="tp-item tp-stop">停損 <b>458.22</b>（-11.2%）</span>｜<span class="tp-item tp-target">目標 <b>593.04</b>（+14.9%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">486.29</span><span class="cost-delta cost-up">+6.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">519.05</span><span class="cost-delta cost-down">-0.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">484.22</span><span class="cost-delta cost-up">+6.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">455.02</span><span class="cost-delta cost-up">+13.4% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     
@@ -3599,6 +3683,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-6"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-6"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -3921,6 +4007,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>1857.75</b></span>｜<span class="tp-item">突破 <b>1996.22</b></span>｜<span class="tp-item tp-stop">停損 <b>1761.15</b>（-5.6%）</span>｜<span class="tp-item tp-target">目標 <b>2003.47</b>（+7.4%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1889.75</span><span class="cost-delta cost-down">-1.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1871.30</span><span class="cost-delta cost-down">-0.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1604.79</span><span class="cost-delta cost-up">+16.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">1868.35</span><span class="cost-delta cost-down">-0.2% vs 現價</span></div></div><div class="cost-insight">現價貼近中期成本，攻防關鍵位</div></div>
 
     
@@ -4106,6 +4195,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-7"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-7"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -4428,6 +4519,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>1643.40</b></span>｜<span class="tp-item">突破 <b>1745.00</b></span>｜<span class="tp-item tp-stop">停損 <b>1433.34</b>（-13.7%）</span>｜<span class="tp-item tp-target">目標 <b>1962.21</b>（+18.2%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1643.40</span><span class="cost-delta cost-up">+1.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1749.07</span><span class="cost-delta cost-down">-5.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1859.12</span><span class="cost-delta cost-down">-10.7% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     <div class="short-term-card bullish">
@@ -4520,6 +4614,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-8"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-8"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -4843,6 +4939,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>89.38</b></span>｜<span class="tp-item">突破 <b>101.13</b></span>｜<span class="tp-item tp-stop">停損 <b>86.08</b>（-9.3%）</span>｜<span class="tp-item tp-target">目標 <b>106.66</b>（+12.4%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">94.98</span><span class="cost-delta cost-down">-0.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">89.43</span><span class="cost-delta cost-up">+6.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">96.03</span><span class="cost-delta cost-down">-1.2% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
     
@@ -4923,6 +5022,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-9"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-9"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -5245,6 +5346,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>125.19</b></span>｜<span class="tp-item">突破 <b>154.75</b></span>｜<span class="tp-item tp-stop">停損 <b>123.95</b>（-17.7%）</span>｜<span class="tp-item tp-target">目標 <b>186.13</b>（+23.6%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">128.31</span><span class="cost-delta cost-up">+17.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">105.48</span><span class="cost-delta cost-up">+42.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">88.31</span><span class="cost-delta cost-up">+70.5% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
@@ -5326,6 +5430,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-10"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-10"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -5648,6 +5754,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>9.04</b></span>｜<span class="tp-item">突破 <b>10.37</b></span>｜<span class="tp-item tp-stop">停損 <b>7.89</b>（-13.6%）</span>｜<span class="tp-item tp-target">目標 <b>10.79</b>（+18.2%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">9.48</span><span class="cost-delta cost-down">-3.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">10.01</span><span class="cost-delta cost-down">-8.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">10.72</span><span class="cost-delta cost-down">-14.8% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     
@@ -5728,6 +5837,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-11"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-11"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -6050,6 +6161,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>53.58</b></span>｜<span class="tp-item">突破 <b>72.50</b></span>｜<span class="tp-item tp-stop">停損 <b>53.05</b>（-24.7%）</span>｜<span class="tp-item tp-target">目標 <b>93.61</b>（+32.9%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">59.53</span><span class="cost-delta cost-up">+18.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">50.12</span><span class="cost-delta cost-up">+40.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">42.17</span><span class="cost-delta cost-up">+67.0% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
@@ -6131,6 +6245,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-12"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-12"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -6453,6 +6569,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>93.17</b></span>｜<span class="tp-item">突破 <b>105.90</b></span>｜<span class="tp-item tp-stop">停損 <b>92.25</b>（-9.6%）</span>｜<span class="tp-item tp-target">目標 <b>115.01</b>（+12.8%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">93.20</span><span class="cost-delta cost-up">+9.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">85.11</span><span class="cost-delta cost-up">+19.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">88.75</span><span class="cost-delta cost-up">+14.9% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
     
@@ -6534,6 +6653,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-13"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-13"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -6856,6 +6977,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>128.23</b></span>｜<span class="tp-item">突破 <b>149.82</b></span>｜<span class="tp-item tp-stop">停損 <b>126.96</b>（-12.4%）</span>｜<span class="tp-item tp-target">目標 <b>168.98</b>（+16.6%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">128.66</span><span class="cost-delta cost-up">+12.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">117.19</span><span class="cost-delta cost-up">+23.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">104.72</span><span class="cost-delta cost-up">+38.4% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
@@ -6937,6 +7061,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-14"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-14"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -7259,6 +7385,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>126.78</b></span>｜<span class="tp-item">突破 <b>156.28</b></span>｜<span class="tp-item tp-stop">停損 <b>115.84</b>（-9.5%）</span>｜<span class="tp-item tp-target">目標 <b>144.36</b>（+12.7%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">135.67</span><span class="cost-delta cost-down">-5.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">145.58</span><span class="cost-delta cost-down">-12.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">146.57</span><span class="cost-delta cost-down">-12.6% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     
@@ -7340,6 +7469,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-15"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-15"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -7662,6 +7793,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>9.38</b></span>｜<span class="tp-item">突破 <b>9.77</b></span>｜<span class="tp-item tp-stop">停損 <b>9.29</b>（-4.6%）</span>｜<span class="tp-item tp-target">目標 <b>10.35</b>（+6.3%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">9.34</span><span class="cost-delta cost-up">+4.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">9.14</span><span class="cost-delta cost-up">+6.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">10.03</span><span class="cost-delta cost-down">-2.9% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
     
@@ -7742,6 +7876,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-16"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-16"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -8064,6 +8200,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="trading-plan-box"><span class="tp-title">📋 交易策略</span><span class="tp-item">支撐 <b>345.46</b></span>｜<span class="tp-item">突破 <b>367.72</b></span>｜<span class="tp-item tp-stop">停損 <b>322.51</b>（-7.6%）</span>｜<span class="tp-item tp-target">目標 <b>384.21</b>（+10.1%）</span><span class="tp-note" style="color:var(--muted);font-size:0.72rem;margin-left:0.4rem">跌破支撐確認停損</span></div>
 
+    <details class="stock-details">
+    <summary class="stock-toggle">展開詳細分析</summary>
+
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">348.30</span><span class="cost-delta cost-up">+0.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">370.45</span><span class="cost-delta cost-down">-5.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">400.20</span><span class="cost-delta cost-down">-12.8% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     <div class="short-term-card bullish">
@@ -8156,6 +8295,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="chart-row sub"><canvas id="wr-17"></canvas></div>
         <div class="chart-row sub"><canvas id="macd-17"></canvas></div>
     </div>
+
+    </details>
 
     <script>
     (function() {
@@ -8432,7 +8573,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-12 13:02
+    Stock Analysis CLI | 報告自動產生於 2026-04-12 13:33
 </footer>
 
 <script>
@@ -8492,6 +8633,28 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 disableZoom(chart);
             }
         }
+    });
+})();
+
+// 手機：點擊導航連結後自動收合選單
+document.querySelectorAll('.side-nav .nav-item').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelector('.side-nav').classList.remove('open');
+        var backdrop = document.querySelector('.nav-backdrop');
+        if (backdrop) backdrop.classList.remove('open');
+    });
+});
+
+// 手機：回到頂部按鈕（滾動超過 500px 顯示）
+(function() {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.innerHTML = '↑';
+    btn.setAttribute('aria-label', '回到頂部');
+    btn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    document.body.appendChild(btn);
+    window.addEventListener('scroll', function() {
+        btn.style.display = window.scrollY > 500 ? 'flex' : 'none';
     });
 })();
 </script>
