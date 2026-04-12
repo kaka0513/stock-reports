@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-12 13:33</title>
+<title>股票分析報告 - 2026-04-12 14:11</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -17,7 +17,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .nav-item:hover { background: rgba(96,165,250,0.1); border-left-color: var(--accent); }
 .nav-sym { font-weight: 700; font-size: 0.9rem; color: var(--accent); }
 .nav-name { font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.nav-section { font-size: 0.7rem; font-weight: 700; color: var(--yellow); padding: 0.8rem 1rem 0.3rem; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid var(--border); margin-top: 0.3rem; }
+.nav-group { border-top: 1px solid var(--border); margin-top: 0.3rem; }
+.nav-section { font-size: 0.7rem; font-weight: 700; color: var(--yellow); padding: 0.8rem 1rem 0.3rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; list-style: none; user-select: none; }
+.nav-section::-webkit-details-marker { display: none; }
+.nav-section::after { content: ' ▾'; font-size: 0.6rem; }
+.nav-group:not([open]) .nav-section::after { content: ' ▸'; }
 h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .nav-logo { display: block; width: 36px; height: 36px; object-fit: contain; margin: 0 0 0.5rem 1rem; opacity: 0.9; }
 .subtitle { text-align: center; color: var(--muted); margin-bottom: 2rem; }
@@ -295,7 +299,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="nav-title">快速導航</div>
     <a href="#top" class="nav-item"><span class="nav-sym">TOP</span><span class="nav-name">回到頂部</span></a>
     <a href="#screening" class="nav-item"><span class="nav-sym">篩選</span><span class="nav-name">篩選結果</span></a>
-    <div class="nav-section">台股</div>
+    <details class="nav-group" open><summary class="nav-section">台股（9）</summary>
 <a href="#section-tw" class="nav-item"><span class="nav-sym">ALL</span><span class="nav-name">台股區塊</span></a>
 <a href="#stock-2383" class="nav-item"><span class="nav-sym">2383</span><span class="nav-name">台光電</span></a>
 <a href="#stock-2409" class="nav-item"><span class="nav-sym">2409</span><span class="nav-name">友達</span></a>
@@ -306,7 +310,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 <a href="#stock-6531" class="nav-item"><span class="nav-sym">6531</span><span class="nav-name">愛普*</span></a>
 <a href="#stock-6805" class="nav-item"><span class="nav-sym">6805</span><span class="nav-name">富世達</span></a>
 <a href="#stock-8299" class="nav-item"><span class="nav-sym">8299</span><span class="nav-name">群聯</span></a>
-<div class="nav-section">美股</div>
+</details>
+<details class="nav-group" open><summary class="nav-section">美股（9）</summary>
 <a href="#section-us" class="nav-item"><span class="nav-sym">ALL</span><span class="nav-name">美股區塊</span></a>
 <a href="#stock-ASTS" class="nav-item"><span class="nav-sym">ASTS</span><span class="nav-name">AST SpaceMobile, Inc.</span></a>
 <a href="#stock-AAOI" class="nav-item"><span class="nav-sym">AAOI</span><span class="nav-name">Applied Optoelectronics, Inc.</span></a>
@@ -317,11 +322,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 <a href="#stock-PLTR" class="nav-item"><span class="nav-sym">PLTR</span><span class="nav-name">Palantir Technologies Inc.</span></a>
 <a href="#stock-UMC" class="nav-item"><span class="nav-sym">UMC</span><span class="nav-name">United Microelectronics Corporation</span></a>
 <a href="#stock-TSLA" class="nav-item"><span class="nav-sym">TSLA</span><span class="nav-name">Tesla, Inc.</span></a>
+</details>
 </nav>
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(245,158,11,0.25);color:var(--yellow);font-size:0.75rem;vertical-align:middle">純觀察版</span></h1>
-<p class="subtitle">2026-04-12 13:33　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
+<p class="subtitle">2026-04-12 14:11　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">18</div><div class="label">分析股票數</div></div>
@@ -329,7 +335,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 </div>
 
 <h3 class="section-title" id="screening">篩選結果</h3>
-<p class="screen-criteria" style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">篩選條件：RSI 30~70、殖利率 ≥2.0%（若有數據）、排除 WR 三線共振超買與 RSI 超買+KD 死叉等過熱訊號</p>
+<p class="screen-criteria" style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">篩選條件：RSI 30~70、殖利率 ≥2.0%（若有數據）、排除 WR 雙線/三線共振超買（+KD>90）與 RSI 超買+KD 死叉等過熱訊號</p>
 <h4 style="color:var(--yellow);margin-bottom:0.5rem">👀 觀察清單</h4>
                 <table class="screen-table">
                 <thead><tr>
@@ -478,13 +484,13 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>3105.22</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>3839.71</b>（+12%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>3839.71</b>（+12%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>4991.62</b>（+46%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>9.2%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>12.3%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -504,7 +510,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">3082.31</span><span class="cost-delta cost-up">+11.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2825.22</span><span class="cost-delta cost-up">+21.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">2198.40</span><span class="cost-delta cost-up">+55.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2955.78</span><span class="cost-delta cost-up">+15.7% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">3082.31</span><span class="cost-delta cost-up">+11.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2825.22</span><span class="cost-delta cost-up">+21.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">2198.40</span><span class="cost-delta cost-up">+55.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2973.70</span><span class="cost-delta cost-up">+15.0% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
 
@@ -523,7 +529,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bullish"><span class="label">趨勢</span><span class="value">多頭排列</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">2825.22</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">2198.40</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2955.78</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2973.70</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -532,11 +538,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">RSI=71.4 超買區</span><span class="signal">Williams %R=-1.8 超買區（> -20）</span><span class="signal">⚠ WR 三線共振超買（7/14/28 日）：-2/-2/-1，回調風險極高</span><span class="signal">股價觸及布林通道上軌</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -554,21 +560,21 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--red)">+719 張</span>
-                        <span class="inst-detail">買超 5 日 / 賣超 5 日</span>
+                        <span class="inst-val" style="color:var(--red)">+13 張</span>
+                        <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--red)">+1.1 千張</span>
+                        <span class="inst-val" style="color:var(--red)">+918 張</span>
                         <span class="inst-detail">買超 9 日 / 賣超 1 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--red)">+45 張</span>
+                        <span class="inst-val" style="color:var(--red)">+77 張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--red)">+1.8 千張</span>
+                        <span class="inst-val" style="color:var(--red)">+1.0 千張</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -612,6 +618,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+11 張</td>
                         <td style="color:var(--red)">+367 張</td>
                     </tr><tr>
+                        <td>03/31</td>
+                        <td style="color:var(--green)">-106 張</td>
+                        <td style="color:var(--red)">+52 張</td>
+                        <td style="color:var(--green)">-9 張</td>
+                        <td style="color:var(--green)">-62 張</td>
+                    </tr><tr>
                         <td>03/30</td>
                         <td style="color:var(--green)">-461 張</td>
                         <td style="color:var(--green)">-32 張</td>
@@ -629,12 +641,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+56 張</td>
                         <td style="color:var(--green)">-7 張</td>
                         <td style="color:var(--red)">+513 張</td>
-                    </tr><tr>
-                        <td>03/25</td>
-                        <td style="color:var(--red)">+601 張</td>
-                        <td style="color:var(--red)">+196 張</td>
-                        <td style="color:var(--green)">-41 張</td>
-                        <td style="color:var(--red)">+757 張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -682,7 +688,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/11</span><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZUFNxZXdPTTREVGdGVGtGQjBhaHA4d2tNX08xN2VoX1ItYktSSGcwazM4UEdtcmg5TVFDQXZYZkZkSEtBaEJMS0RpcnZwbHVNWnBR?oc=5" target="_blank" rel="noopener">台光電(2383) 個股概覽 | 個股 - 股市 - CMoney</a> <span class="news-pub">- CMoney</span></li><li><span class="news-date">04/10</span><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE1BUEdUMWtVTG14bGNBUE1KNVhKZml2c0tSeHhrdWc1WUEwRDItTVpfVzdsVXBEVFp4UnpZYVNGSGZmNE4zb1lyRFF4eGVhYjRVTHM5X3d6X0I?oc=5" target="_blank" rel="noopener">2383 台光電- 科技股推升台股飆漲- 股市爆料同學會 - CMoney</a> <span class="news-pub">- CMoney</span></li><li><span class="news-date">03/12</span><a href="https://news.google.com/rss/articles/CBMipANBVV95cUxNeHBwd2xVMEhTdkFCQW1qY3BJLUpfam5adEdtaE9QMVN0UHRwMXNfd3FpaVNZZWtiX2xIbVBiUFNGRmRrQ01ZeTZUVDFIcVBMZ2MyU1dHb2loMFo5RjVaRjNkX213MlgyZTVfNUVPY2xCc1ZVbzFITUozU3F3Yk9fSktHWlp4Mm1peW9HOGptbTJKS2FMX0hHSnFpODlfZ00zZm0wTF9pRjEtVkF6ZUFWbElLY3RnMzFYc1R2aGhDWjBRam5Nam4zNlJQVl9PZGkzYWszRHUxUWtON3NDLUJ1YUg3alI0R0tuZnNUX3FQVWF2Q01LM2JGdGpxbDFvYzVIUU1yUk9PU1EzaXZxY05YYlBWVFRydmZpS0tBWXAtVlRGbXMyTWRERTlzS2FDaXlQN1lBdTVNZkhKLTRFaFFSRm9YbFdZUXJIelNUemtiM1QtdUc1VHNWTzVFR191ekNNZGJDYVJXMkU1YmUzTm91WlBfQjdEY2c4Q3JjUzJDZml6cDQxWDQyN1pLRkhBbWtIMkYxZWtsWDcwZWlwSUJVajd1Nms?oc=5" target="_blank" rel="noopener">台光電創2760元天價市值近兆元！逼宮中信金挑戰台灣前十大企業 - Yahoo股市</a> <span class="news-pub">- Yahoo股市</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-0"></canvas></div>
@@ -997,7 +1003,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>13.4%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.34 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -1057,11 +1063,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">K 線下穿 D 線（死亡交叉）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -1169,7 +1175,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-card">
                     <span class="inst-label">融資餘額</span>
                     <span class="inst-val">223 張</span>
-                    <span class="inst-detail" style="color:var(--red)">變化 +44 張</span>
+                    <span class="inst-detail" style="color:var(--red)">變化 +39 張</span>
                 </div>
                 <div class="inst-card">
                     <span class="inst-label">融券餘額</span>
@@ -1206,7 +1212,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/02</span><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9TRE0yM3VabjN4SDNab0lzenE4aU5VWkY0VmNWVjRoT2QybDJUekNITTlJMmRRc0pnaXJFN1ZzRVFPRzZVNmxUVVRfb1FDMFlQQXlKNGQwX0tUYkRuemZoT2lEUFhnOWx1MUdvMnFUOA?oc=5" target="_blank" rel="noopener">友達(2409)反撲群創(3481) 面板轉型AI半導體 誰是2026年的領頭羊？ - 理財周刊</a> <span class="news-pub">- 理財周刊</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">03/15</span><a href="https://news.google.com/rss/articles/CBMirwJBVV95cUxOWk5DSkNDWndvNnZSa0EwYW5KS0VPLXVCTVBRYTVILXZwX29OcUszWkRZcVhmUFZ5SWtXbWJTcVpFc0JKcV9hMVdwRGlsMDZYQ3czUVNENzdBR0dCWjBHX3VGLXZYV2dXQVlIdHBXV2gxZ20zTmQwdmpwN2trMmp4Vk1SYWVvMFBVNm9nc3ZHRUx4eExTZkpJUEkxUkJ5M3dYTG4zUHJrT0hmdzhaNDBJTk5uMWIzTEZKa2tBNTY5T2NvY3p0NXFCNk8zNml1b0F6LS1WTDZUX2dJZzJMN2o1U1daWlFqVEtwUV9iT3hoeU1vSnpSZlltT05xdHQydzJoX2VSMDBhUXlGRUFfWl9wVGh1ZTQwTjljVWFxXzQ3ekFLMkIzZ1Y5bjY0Z3h4ZkE?oc=5" target="_blank" rel="noopener">《台北股市》外資13日賣超股：群創、友達、中石化 - Yahoo股市</a> <span class="news-pub">- Yahoo股市</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-1"></canvas></div>
@@ -1515,13 +1521,13 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>1931.15</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>2826.80</b>（+22%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>2826.80</b>（+22%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>3674.84</b>（+59%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>16.6%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>22.1%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -1569,11 +1575,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">RSI=76.1 超買區</span><span class="signal">Williams %R=-0.0 超買區（> -20）</span><span class="signal">⚠ WR 三線共振超買（7/14/28 日）：-0/-0/-0，回調風險極高</span><span class="signal">股價觸及布林通道上軌</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -1929,7 +1935,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>16.3%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -1949,7 +1955,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">26.02</span><span class="cost-delta cost-down">-0.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">27.98</span><span class="cost-delta cost-down">-7.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">25.80</span><span class="cost-delta cost-up">+0.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">25.20</span><span class="cost-delta cost-up">+3.2% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">26.02</span><span class="cost-delta cost-down">-0.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">27.98</span><span class="cost-delta cost-down">-7.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">25.80</span><span class="cost-delta cost-up">+0.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">25.27</span><span class="cost-delta cost-up">+2.9% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     
 
@@ -1968,7 +1974,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bearish"><span class="label">趨勢</span><span class="value">短空待確認</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">27.98</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">25.80</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">25.20</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">25.27</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -1977,11 +1983,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">短期均線下彎但中長期未同步</span><span class="signal">K 線下穿 D 線（死亡交叉）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -1998,21 +2004,21 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--green)">-10.4 萬張</span>
-                        <span class="inst-detail">買超 3 日 / 賣超 7 日</span>
+                        <span class="inst-val" style="color:var(--green)">-11.4 萬張</span>
+                        <span class="inst-detail">買超 2 日 / 賣超 8 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--green)">-590 張</span>
+                        <span class="inst-val" style="color:var(--green)">-275 張</span>
                         <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--red)">+4.0 千張</span>
+                        <span class="inst-val" style="color:var(--red)">+3.4 千張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--green)">-10.0 萬張</span>
+                        <span class="inst-val" style="color:var(--green)">-11.1 萬張</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -2045,10 +2051,10 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-5.3 萬張</td>
                     </tr><tr>
                         <td>04/02</td>
-                        <td style="color:var(--red)">+4.8 千張</td>
-                        <td style="color:var(--red)">+109 張</td>
-                        <td style="color:var(--red)">+420 張</td>
-                        <td style="color:var(--red)">+5.3 千張</td>
+                        <td style="color:var(--green)">-5.3 千張</td>
+                        <td style="color:var(--red)">+424 張</td>
+                        <td style="color:var(--green)">-204 張</td>
+                        <td style="color:var(--green)">-5.1 千張</td>
                     </tr><tr>
                         <td>04/01</td>
                         <td style="color:var(--green)">-1.4 萬張</td>
@@ -2441,7 +2447,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>11.6%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -2501,11 +2507,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">K 線下穿 D 線（死亡交叉）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -2650,7 +2656,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/11</span><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFA2WG82dDc0UXEzaDl4ODhSVXJ4SFlQME91c0Y5a1RKc3VNeXBFRk9XRGo4T29CUGJndE1zcWVFQURUc29ySExTVGhBcjI1cWZleFBn?oc=5" target="_blank" rel="noopener">健策(3653) 個股概覽 | 個股 - 股市 - CMoney</a> <span class="news-pub">- CMoney</span></li><li><span class="news-date">04/10</span><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE1oeDJCUHpuREtPZWFBblVxMzV5Mm9TZWRsYkJZWllDeDJwTUFNUVcybHZuRXpXeEtHeFFpYVFMYUxLQ3ZzOWhpaHU5aGh2djJncm1sMTNoTGg?oc=5" target="_blank" rel="noopener">3653 健策 - 恭喜博智漲停板！ - 股市爆料同學會 - CMoney</a> <span class="news-pub">- CMoney</span></li><li><span class="news-date">2025/12/04</span><a href="https://news.google.com/rss/articles/CBMiqgRBVV95cUxPTXpWYkc3RzRXZ2JFTXhJUDUweHNyUzRTRkpFWmJYbFUxZmNGakdsMFRqSG5acllwSWJPQWNQakpkcG5IQzFwUTNHZ2stZ3FLUldBWU9yalV4TTJrLXBUTUFFNERFZjNianNUbEFJam5WSlJxOVBCTTl0cktTOThKdHdPellNdmJFSXFOOGx1VkpwWC03cXJSWmVFdXMxcVVjLVB6TlRVeDFKZXFsbXFzemdOYTNiT0ZZU1dRTWFvNFdGUEhhS0dyZTlRbzJ0THd5ajFCN3NYQjlnRENoNm9CN2lfOE80dG96NlBjczA3YlpvclNmbEJMN2wtaVhWcGxYQUYtYWJ1OWlyRVEteEF2eUllZHI0TTZCYmxPS1AtM2ZqcG04NEZuamRvcTVyOFZqZDkxcnVlUWJUQU4tbmdoQnhHZWdwTFNjUGRUbFZ5WTVhRHdmUFR3WkVUcHJjeWFOOHFBZXpubW4zcy1pR25kZ25OUlpLR1VLMDMtZjIzQlFUbEIxNGZPOVg2blpZNG1tZVdubWhKV3hBZUVvd2VRVkYzdG5XQXc0c0ltdlEzd1cwV0QzRlk2dWkwWi1KZmszRUFfLTVrT0ozMGUxbjgwZFNyUFNrLWdJVWJQTjN1d3o0UE9oVVZYbTVzTzBCQjRvclNqRkRDLXIxazJBaGlJdWFna2RuTy1TVF8tbUQ2cXJvUGhPejJORzUyV09PeklUZEMwRFR4N3QtZw?oc=5" target="_blank" rel="noopener">【Hot台股】歷史新天價！健策飆漲停登3千元大關...網喊「挑戰川湖老三地位」 分析師看法曝 - Yahoo股市</a> <span class="news-pub">- Yahoo股市</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-4"></canvas></div>
@@ -2959,13 +2965,13 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>2061.52</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>2676.31</b>（+15%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>2676.31</b>（+15%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>3479.20</b>（+50%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>11.3%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>15.1%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -2985,7 +2991,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2148.71</span><span class="cost-delta cost-up">+8.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2047.90</span><span class="cost-delta cost-up">+13.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1750.54</span><span class="cost-delta cost-up">+32.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2117.09</span><span class="cost-delta cost-up">+9.8% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2148.71</span><span class="cost-delta cost-up">+8.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2047.90</span><span class="cost-delta cost-up">+13.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1750.54</span><span class="cost-delta cost-up">+32.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2115.02</span><span class="cost-delta cost-up">+9.9% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
     
 
@@ -3004,7 +3010,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bullish"><span class="label">趨勢</span><span class="value">多頭排列</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">2047.90</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">1750.54</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2117.09</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">2115.02</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -3013,11 +3019,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">Williams %R=-0.0 超買區（> -20）</span><span class="signal">WR 雙線共振超買（7/14/28 日）：-0/-0/-23</span><span class="signal">股價觸及布林通道上軌</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -3035,21 +3041,21 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--green)">-594 張</span>
-                        <span class="inst-detail">買超 3 日 / 賣超 7 日</span>
+                        <span class="inst-val" style="color:var(--red)">+53 張</span>
+                        <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--red)">+351 張</span>
+                        <span class="inst-val" style="color:var(--red)">+347 張</span>
                         <span class="inst-detail">買超 7 日 / 賣超 3 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--green)">-175 張</span>
+                        <span class="inst-val" style="color:var(--green)">-65 張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--green)">-416 張</span>
+                        <span class="inst-val" style="color:var(--red)">+336 張</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -3093,12 +3099,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-53 張</td>
                         <td style="color:var(--red)">+105 張</td>
                     </tr><tr>
-                        <td>03/31</td>
-                        <td style="color:var(--green)">-424 張</td>
-                        <td style="color:var(--red)">+61 張</td>
-                        <td style="color:var(--green)">-79 張</td>
-                        <td style="color:var(--green)">-441 張</td>
-                    </tr><tr>
                         <td>03/30</td>
                         <td style="color:var(--green)">-166 張</td>
                         <td style="color:var(--red)">+19 張</td>
@@ -3116,6 +3116,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+275 張</td>
                         <td style="color:var(--green)">-33 張</td>
                         <td style="color:var(--green)">-236 張</td>
+                    </tr><tr>
+                        <td>03/25</td>
+                        <td style="color:var(--red)">+222 張</td>
+                        <td style="color:var(--red)">+57 張</td>
+                        <td style="color:var(--red)">+31 張</td>
+                        <td style="color:var(--red)">+311 張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -3478,7 +3484,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>14.9%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -3526,11 +3532,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">短期均線下彎但中長期未同步</span><span class="signal">K 線上穿 D 線（黃金交叉）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -3990,7 +3996,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>7.4%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -4010,7 +4016,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1889.75</span><span class="cost-delta cost-down">-1.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1871.30</span><span class="cost-delta cost-down">-0.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1604.79</span><span class="cost-delta cost-up">+16.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">1868.35</span><span class="cost-delta cost-down">-0.2% vs 現價</span></div></div><div class="cost-insight">現價貼近中期成本，攻防關鍵位</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1889.75</span><span class="cost-delta cost-down">-1.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1871.30</span><span class="cost-delta cost-down">-0.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1604.79</span><span class="cost-delta cost-up">+16.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">1862.30</span><span class="cost-delta cost-up">+0.1% vs 現價</span></div></div><div class="cost-insight">現價貼近中期成本，攻防關鍵位</div></div>
 
     
 
@@ -4029,7 +4035,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bullish"><span class="label">趨勢</span><span class="value">多頭排列</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">1871.30</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">1604.79</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">1868.35</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">1862.30</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -4038,11 +4044,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -4059,21 +4065,21 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--green)">-1.3 千張</span>
+                        <span class="inst-val" style="color:var(--green)">-1.4 千張</span>
                         <span class="inst-detail">買超 1 日 / 賣超 9 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--red)">+348 張</span>
-                        <span class="inst-detail">買超 6 日 / 賣超 4 日</span>
+                        <span class="inst-val" style="color:var(--green)">-85 張</span>
+                        <span class="inst-detail">買超 5 日 / 賣超 5 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--green)">-34 張</span>
+                        <span class="inst-val" style="color:var(--green)">-70 張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--green)">-1.0 千張</span>
+                        <span class="inst-val" style="color:var(--green)">-1.5 千張</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -4111,12 +4117,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-52 張</td>
                         <td style="color:var(--red)">+65 張</td>
                     </tr><tr>
-                        <td>04/01</td>
-                        <td style="color:var(--green)">-199 張</td>
-                        <td style="color:var(--red)">+291 張</td>
-                        <td style="color:var(--red)">+52 張</td>
-                        <td style="color:var(--red)">+144 張</td>
-                    </tr><tr>
                         <td>03/31</td>
                         <td style="color:var(--green)">-75 張</td>
                         <td style="color:var(--red)">+306 張</td>
@@ -4140,6 +4140,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-84 張</td>
                         <td style="color:var(--red)">+8 張</td>
                         <td style="color:var(--green)">-110 張</td>
+                    </tr><tr>
+                        <td>03/25</td>
+                        <td style="color:var(--green)">-239 張</td>
+                        <td style="color:var(--green)">-142 張</td>
+                        <td style="color:var(--red)">+16 張</td>
+                        <td style="color:var(--green)">-364 張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -4502,7 +4508,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>18.2%</span>
             <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
         </div>
-        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>公司虧損中，估值僅供方向參考</div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>基本面數據暫無，估值僅供方向參考</div>
     </div>
 
     
@@ -4554,19 +4560,19 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">1749.07</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">1859.12</span></div>
         <div class="metric"><span class="label">法人成本(估)</span><span class="value">N/A</span></div>
-        <div class="metric"><span class="label">本益比</span><span class="value">N/A</span></div>
+        <div class="metric"><span class="label">本益比</span><span class="value">1.74</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
-        <div class="metric"><span class="label">基本面評分</span><span class="value">0</span></div>
+        <div class="metric"><span class="label">基本面評分</span><span class="value">1</span></div>
     </div>
 
     <div class="signals"><span class="signal">均線空頭排列（MA5<MA20<MA60）</span><span class="signal">K 線上穿 D 線（黃金交叉）</span></div>
 
-    <ul class="assessments"></ul>
+    <ul class="assessments"><li>本益比 1.7（偏低，可能被低估）</li><li>PB 105.00（偏高）</li><li>EPS 無資料（基本面數據暫無）</li></ul>
 
     
 
-    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：</div></div>
+    <div class="investor-fit-box"><div class="fit-header">👤 投資人適合度　<span class="fit-profile">中性配置</span></div><div class="fit-row"><span class="fit-row-label">✓ 適合</span><span class="fit-tag fit-ok">一般配置型投資人</span></div><div class="fit-row"><span class="fit-row-label">✗ 不適合</span>—</div><div class="fit-reasons">判定依據：EPS 無資料</div></div>
 
     <div class="analysis-box">
         <div class="analysis-title">技術分析解讀</div>
@@ -5323,7 +5329,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>123.95</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>186.13</b>（+24%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>69.08</b>（-54%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>165.66</b>（+10%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>186.13</b>（+24%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>241.97</b>（+61%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>165.66</b>（+10%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>17.7%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>23.6%</span>
@@ -6138,7 +6144,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>53.05</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>93.61</b>（+33%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>40.49</b>（-43%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>77.47</b>（+10%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>93.61</b>（+33%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>121.69</b>（+73%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>77.47</b>（+10%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>24.7%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>32.9%</span>
@@ -6954,7 +6960,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>126.96</span>
         </div>
         </div>
-        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>168.98</b>（+17%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>47.71</b>（-67%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>162.00</b>（+12%）</span></div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>168.98</b>（+17%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>219.67</b>（+52%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>162.00</b>（+12%）</span></div>
         <div class="ts-rr-box">
             <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>12.4%</span>
             <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>16.6%</span>
@@ -8573,7 +8579,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-12 13:33
+    Stock Analysis CLI | 報告自動產生於 2026-04-12 14:11
 </footer>
 
 <script>
