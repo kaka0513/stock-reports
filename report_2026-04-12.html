@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-12 11:33</title>
+<title>股票分析報告 - 2026-04-12 11:44</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -126,6 +126,46 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .val-scenarios .sc-bull { color: var(--green); font-weight: 700; }
 .val-scenarios .sc-base { color: var(--accent); font-weight: 700; }
 .val-scenarios .sc-bear { color: var(--red); font-weight: 700; }
+/* Catalyst Timeline 事件時間軸 */
+.catalyst-box { padding: 0.8rem 1rem; background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; margin: 1rem 0; }
+.catalyst-box .cat-title { font-weight: 700; color: var(--yellow); margin-bottom: 0.6rem; font-size: 0.9rem; }
+.catalyst-box .cat-list { display: flex; flex-direction: column; gap: 0.35rem; }
+.catalyst-box .cat-row { display: flex; align-items: center; gap: 0.6rem; padding: 0.35rem 0.6rem; border-radius: 5px; font-size: 0.85rem; background: rgba(15,23,42,0.4); }
+.catalyst-box .cat-row.cat-past { opacity: 0.5; }
+.catalyst-box .cat-row.cat-imminent { background: rgba(239,68,68,0.12); border-left: 3px solid var(--red); }
+.catalyst-box .cat-row.cat-soon { background: rgba(245,158,11,0.1); border-left: 3px solid var(--yellow); }
+.catalyst-box .cat-row.cat-future { border-left: 3px solid var(--muted); }
+.catalyst-box .cat-date { color: var(--accent); font-weight: 700; min-width: 85px; font-family: monospace; }
+.catalyst-box .cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.catalyst-box .cat-impact-high { background: var(--red); }
+.catalyst-box .cat-impact-medium { background: var(--yellow); }
+.catalyst-box .cat-impact-low { background: var(--muted); }
+.catalyst-box .cat-event { color: var(--text); flex: 1; }
+.catalyst-box .cat-days { color: var(--muted); font-size: 0.75rem; }
+/* Trading Sheet 整合決策卡 */
+.trading-sheet { background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(16,185,129,0.04)); border: 1px solid rgba(59,130,246,0.35); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+.trading-sheet .ts-header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(59,130,246,0.2); margin-bottom: 0.6rem; }
+.trading-sheet .ts-price { font-size: 0.95rem; color: var(--muted); }
+.trading-sheet .ts-price b { color: var(--text); font-size: 1.3rem; margin-left: 0.3rem; }
+.trading-sheet .ts-bias { font-weight: 700; font-size: 0.9rem; margin-left: auto; }
+.trading-sheet .ts-action { background: rgba(96,165,250,0.2); color: var(--accent); padding: 0.2rem 0.7rem; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
+.trading-sheet .ts-levels { display: flex; gap: 2rem; font-size: 0.85rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.trading-sheet .ts-support { color: var(--green); }
+.trading-sheet .ts-resistance { color: var(--red); }
+.trading-sheet .ts-plan { margin-top: 0.4rem; }
+.trading-sheet .ts-row-label { display: inline-block; font-size: 0.8rem; color: var(--muted); margin-right: 0.5rem; font-weight: 700; }
+.trading-sheet .ts-plan-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
+.trading-sheet .ts-plan-item { background: rgba(15,23,42,0.5); padding: 0.35rem 0.7rem; border-radius: 6px; font-size: 0.82rem; color: var(--text); }
+.trading-sheet .ts-plan-item.ts-stop { background: rgba(239,68,68,0.15); color: var(--red); }
+.trading-sheet .ts-p-label { display: block; font-size: 0.68rem; color: var(--muted); margin-bottom: 1px; }
+.trading-sheet .ts-targets { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.trading-sheet .ts-target-item { background: rgba(16,185,129,0.1); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.82rem; color: var(--green); }
+.trading-sheet .ts-t-label { display: inline-block; background: var(--bg); color: var(--muted); padding: 1px 5px; border-radius: 3px; font-size: 0.7rem; margin-right: 0.3rem; }
+.trading-sheet .ts-rr-box { margin-top: 0.5rem; display: flex; gap: 1rem; padding: 0.4rem 0.7rem; background: rgba(15,23,42,0.5); border-radius: 6px; font-size: 0.85rem; }
+.trading-sheet .ts-rr-item { color: var(--text); }
+.trading-sheet .ts-rr-label { display: inline-block; color: var(--muted); margin-right: 0.3rem; font-size: 0.72rem; }
+.trading-sheet .ts-risks { margin-top: 0.5rem; padding-top: 0.4rem; border-top: 1px dashed rgba(239,68,68,0.2); font-size: 0.82rem; color: var(--yellow); }
+@media (max-width: 768px) { .trading-sheet .ts-header { flex-direction: column; align-items: flex-start; } .trading-sheet .ts-bias { margin-left: 0; } }
 /* 交易策略一行摘要 */
 .trading-plan-box { padding: 0.6rem 1rem; background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.03)); border: 1px solid rgba(59,130,246,0.3); border-radius: 8px; margin-bottom: 1rem; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
 .trading-plan-box .tp-title { font-weight: 700; color: var(--accent); margin-right: 0.5rem; }
@@ -214,7 +254,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(245,158,11,0.25);color:var(--yellow);font-size:0.75rem;vertical-align:middle">純觀察版</span></h1>
-<p class="subtitle">2026-04-12 11:33　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
+<p class="subtitle">2026-04-12 11:44　<a href="report_2026-04-12.html" style="color:var(--accent);font-size:0.85rem">← 切換至公開觀察版</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">3</div><div class="label">分析股票數</div></div>
@@ -272,6 +312,39 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 <div class="stock-card" id="stock-ASTS">
     <div class="stock-header">
         <h2>[US] ASTS - AST SpaceMobile, Inc. <span class="badge" style="background:rgba(139,92,246,0.2);color:#8b5cf6">Technology</span> <span class="badge pass">通過篩選</span></h2>
+    </div>
+
+    <div class="trading-sheet">
+        <div class="ts-header">
+            <span class="ts-price">現價 <b>94.90</b></span>
+            <span class="ts-bias" style="color:var(--green)">Bias：偏多（Bullish）</span>
+            <span class="ts-action">買入</span>
+        </div>
+        <div class="ts-levels">
+            <span class="ts-support">📍 支撐 89.38 / 77.62</span>
+            <span class="ts-resistance">📍 壓力 101.13 / 129.89</span>
+        </div>
+        <div class="ts-plan">
+            <span class="ts-row-label">📋 交易計劃</span>
+            <div class="ts-plan-row">
+            <span class="ts-plan-item"><span class="ts-p-label">初始 30%</span>89.38 附近（MA20）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">加碼 30%</span>跌至 77.62（布林下軌）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">突破 40%</span>突破 101.13</span>
+            <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>86.08</span>
+        </div>
+        </div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>106.66</b>（+12%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>129.89</b>（+37%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>104.39</b>（+10%）</span></div>
+        <div class="ts-rr-box">
+            <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>9.3%</span>
+            <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>12.4%</span>
+            <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
+        </div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>高波動性、公司虧損中，估值僅供方向參考、公司虧損中</div>
+    </div>
+
+    <div class="catalyst-box">
+        <div class="cat-title">📅 Catalyst Timeline（事件時間軸）</div>
+        <div class="cat-list"><div class="cat-row cat-soon"><span class="cat-date">2026-05-15</span><span class="cat-dot cat-impact-high"></span><span class="cat-event">BlueBird 衛星持續發射</span><span class="cat-days">（33 天後）</span></div><div class="cat-row cat-future"><span class="cat-date">2026-Q3</span><span class="cat-dot cat-impact-high"></span><span class="cat-event">商轉測試啟動</span><span class="cat-days">（125 天後）</span></div><div class="cat-row cat-future"><span class="cat-date">2026-Q4</span><span class="cat-dot cat-impact-medium"></span><span class="cat-event">收入開始成長</span><span class="cat-days">（217 天後）</span></div><div class="cat-row cat-future"><span class="cat-date">2027-Q1</span><span class="cat-dot cat-impact-medium"></span><span class="cat-event">商業化擴張</span><span class="cat-days">（309 天後）</span></div></div>
     </div>
 
     <div class="action-card buy">
@@ -646,6 +719,39 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <h2>[US] PLTR - Palantir Technologies Inc. <span class="badge" style="background:rgba(139,92,246,0.2);color:#8b5cf6">Technology</span> <span class="badge pass">通過篩選</span></h2>
     </div>
 
+    <div class="trading-sheet">
+        <div class="ts-header">
+            <span class="ts-price">現價 <b>128.06</b></span>
+            <span class="ts-bias" style="color:var(--accent)">Bias：超賣反彈（Oversold Rebound）</span>
+            <span class="ts-action">留意買點</span>
+        </div>
+        <div class="ts-levels">
+            <span class="ts-support">📍 支撐 122.68</span>
+            <span class="ts-resistance">📍 壓力 164.06 / 182.43</span>
+        </div>
+        <div class="ts-plan">
+            <span class="ts-row-label">📋 交易計劃</span>
+            <div class="ts-plan-row">
+            <span class="ts-plan-item"><span class="ts-p-label">初始 30%</span>147.76 附近（MA20）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">加碼 30%</span>跌至 131.46（布林下軌）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">突破 40%</span>突破 164.06</span>
+            <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>115.84</span>
+        </div>
+        </div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>144.36</b>（+13%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>182.43</b>（+42%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>185.25</b>（+45%）</span></div>
+        <div class="ts-rr-box">
+            <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>9.5%</span>
+            <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>12.7%</span>
+            <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
+        </div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>高成長股（成長率>30%），葛拉漢公式已剔除</div>
+    </div>
+
+    <div class="catalyst-box">
+        <div class="cat-title">📅 Catalyst Timeline（事件時間軸）</div>
+        <div class="cat-list"><div class="cat-row cat-imminent"><span class="cat-date">2026-05-05</span><span class="cat-dot cat-impact-high"></span><span class="cat-event">Q1 財報發布</span><span class="cat-days">（23 天後）</span></div></div>
+    </div>
+
     <div class="action-card buy">
                 <div class="action-badge buy">留意買點</div>
                 <div><div class="action-triggers"><b>買入訊號：</b>WR三線共振超賣、KD金叉、觸及布林下軌</div><div class="action-sl-tp"><span class="action-sl">停損 115.84（-9.5%）</span><span class="action-tp">停利 144.36（+12.7%）</span></div></div>
@@ -1017,6 +1123,39 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 <div class="stock-card" id="stock-TSLA">
     <div class="stock-header">
         <h2>[US] TSLA - Tesla, Inc. <span class="badge" style="background:rgba(139,92,246,0.2);color:#8b5cf6">Consumer Cyclical</span> <span class="badge pass">通過篩選</span></h2>
+    </div>
+
+    <div class="trading-sheet">
+        <div class="ts-header">
+            <span class="ts-price">現價 <b>348.95</b></span>
+            <span class="ts-bias" style="color:var(--accent)">Bias：超賣反彈（Oversold Rebound）</span>
+            <span class="ts-action">留意買點</span>
+        </div>
+        <div class="ts-levels">
+            <span class="ts-support">📍 支撐 337.24 / 335.59</span>
+            <span class="ts-resistance">📍 壓力 406.11 / 452.43</span>
+        </div>
+        <div class="ts-plan">
+            <span class="ts-row-label">📋 交易計劃</span>
+            <div class="ts-plan-row">
+            <span class="ts-plan-item"><span class="ts-p-label">初始 30%</span>370.85 附近（MA20）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">加碼 30%</span>跌至 335.59（布林下軌）</span>
+            <span class="ts-plan-item"><span class="ts-p-label">突破 40%</span>突破 406.11</span>
+            <span class="ts-plan-item ts-stop"><span class="ts-p-label">停損</span>322.51</span>
+        </div>
+        </div>
+        <div class="ts-targets"><span class="ts-row-label">🎯 目標</span><span class="ts-target-item"><span class="ts-t-label">短</span><b>384.21</b>（+10%）</span> <span class="ts-target-item"><span class="ts-t-label">中</span><b>452.43</b>（+30%）</span> <span class="ts-target-item"><span class="ts-t-label">長</span><b>416.15</b>（+19%）</span></div>
+        <div class="ts-rr-box">
+            <span class="ts-rr-item"><span class="ts-rr-label">Risk</span>7.6%</span>
+            <span class="ts-rr-item"><span class="ts-rr-label">Reward</span>10.1%</span>
+            <span class="ts-rr-item" style="color:var(--yellow)"><span class="ts-rr-label">R:R</span>1.33 ⚠</span>
+        </div>
+        <div class="ts-risks"><span class="ts-row-label">⚠ 主要風險</span>業績下滑</div>
+    </div>
+
+    <div class="catalyst-box">
+        <div class="cat-title">📅 Catalyst Timeline（事件時間軸）</div>
+        <div class="cat-list"><div class="cat-row cat-imminent"><span class="cat-date">2026-04-23</span><span class="cat-dot cat-impact-high"></span><span class="cat-event">Q1 財報發布</span><span class="cat-days">（11 天後）</span></div><div class="cat-row cat-soon"><span class="cat-date">2026-06-30</span><span class="cat-dot cat-impact-medium"></span><span class="cat-event">Robotaxi 進度更新</span><span class="cat-days">（79 天後）</span></div></div>
     </div>
 
     <div class="action-card buy">
@@ -1399,7 +1538,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-12 11:33
+    Stock Analysis CLI | 報告自動產生於 2026-04-12 11:44
 </footer>
 
 <script>
