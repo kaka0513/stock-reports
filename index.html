@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告歷史清單</title>
+<title>股票分析報告</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; line-height: 1.6; max-width: 720px; margin: 0 auto; }
 h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #60a5fa; }
 .subtitle { color: #94a3b8; margin-bottom: 2rem; }
 ul { list-style: none; }
-li { padding: 0.8rem 1rem; background: #1e293b; border-radius: 8px; margin-bottom: 0.5rem; border-left: 3px solid #60a5fa; }
-li a { color: #e2e8f0; text-decoration: none; display: block; transition: color 0.2s; }
+li { padding: 0.8rem 1rem; background: #1e293b; border-radius: 8px; margin-bottom: 0.5rem; border-left: 3px solid #60a5fa; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 li:hover { background: #334155; }
-li a:hover { color: #60a5fa; }
+.date { font-weight: 700; color: #e2e8f0; }
+.links { display: flex; gap: 0.5rem; }
+.links a { color: #60a5fa; text-decoration: none; padding: 0.3rem 0.8rem; border: 1px solid rgba(96,165,250,0.3); border-radius: 6px; font-size: 0.85rem; transition: all 0.2s; }
+.links a:hover { background: rgba(96,165,250,0.15); }
 .disclaimer { margin-top: 2rem; padding: 1rem; background: rgba(245,158,11,0.1); border-left: 3px solid #f59e0b; border-radius: 6px; color: #fbbf24; font-size: 0.85rem; }
 </style>
 </head>
 <body>
 <h1>📈 股票分析報告</h1>
-<p class="subtitle">本清單僅包含公開觀察版，不含任何個人持倉資訊。最後更新：2026-04-23 18:07</p>
+<p class="subtitle">公開觀察版，不含個人持倉。最後更新：2026-04-24 15:26</p>
 <ul>
-<li><a href="report_2026-04-23.html">📊 2026-04-23 股票分析報告</a></li>
-<li><a href="report_2026-04-17.html">📊 2026-04-17 股票分析報告</a></li>
-<li><a href="report_2026-04-16.html">📊 2026-04-16 股票分析報告</a></li>
-<li><a href="report_2026-04-15.html">📊 2026-04-15 股票分析報告</a></li>
-<li><a href="report_2026-04-14.html">📊 2026-04-14 股票分析報告</a></li>
-<li><a href="report_2026-04-12.html">📊 2026-04-12 股票分析報告</a></li>
-<li><a href="report_2026-04-11.html">📊 2026-04-11 股票分析報告</a></li>
+<li><span class="date">📊 2026-04-24</span><div class="links"><a href="report_2026-04-24.html">全部</a> ｜ <a href="report_2026-04-24_tw.html">台股</a> ｜ <a href="report_2026-04-24_us.html">美股</a></div></li>
+<li><span class="date">📊 2026-04-23</span><div class="links"><a href="report_2026-04-23.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-17</span><div class="links"><a href="report_2026-04-17.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-16</span><div class="links"><a href="report_2026-04-16.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-15</span><div class="links"><a href="report_2026-04-15.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-14</span><div class="links"><a href="report_2026-04-14.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-12</span><div class="links"><a href="report_2026-04-12.html">全部</a></div></li>
+<li><span class="date">📊 2026-04-11</span><div class="links"><a href="report_2026-04-11.html">全部</a></div></li>
 </ul>
 <div class="disclaimer">
 ⚠ 免責聲明：本報告為個人投資研究工具自動產生，技術分析與估值僅供參考，不構成任何投資建議。投資決策請自行評估風險。
