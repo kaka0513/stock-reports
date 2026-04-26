@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-26 10:13</title>
+<title>股票分析報告 - 2026-04-26 11:15</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -66,6 +66,14 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .inst-details { margin-top: 0.5rem; }
 .inst-toggle { cursor: pointer; font-size: 0.8rem; color: var(--accent); padding: 0.3rem 0; user-select: none; }
 .inst-toggle:hover { color: var(--text); }
+.money-flow-box { padding: 0.8rem 1rem; background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.2); border-radius: 8px; margin-bottom: 1rem; }
+.money-flow-box .mf-title { font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; }
+.money-flow-box .mf-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+.money-flow-box .mf-item { background: var(--bg); padding: 0.5rem 0.8rem; border-radius: 6px; display: flex; flex-direction: column; min-width: 120px; }
+.money-flow-box .mf-label { font-size: 0.7rem; color: var(--muted); }
+.money-flow-box .mf-value { font-size: 1.1rem; font-weight: 700; }
+.money-flow-box .mf-desc { font-size: 0.72rem; color: var(--muted); }
+.money-flow-box .mf-insight { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); font-style: italic; }
 .inst-details[open] .inst-toggle { margin-bottom: 0.3rem; }
 .prediction-box { margin: 1rem 0; }
 .pred-title { font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
@@ -355,7 +363,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(245,158,11,0.25);color:var(--yellow);font-size:0.75rem;vertical-align:middle">純觀察版</span></h1>
-<p class="subtitle">2026-04-26 10:13　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
+<p class="subtitle">2026-04-26 11:15　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">24</div><div class="label">分析股票數</div></div>
@@ -364,7 +372,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <h3 class="section-title" id="screening">篩選結果</h3>
 <p class="screen-criteria" style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">篩選條件：RSI 30~70、殖利率 ≥2.0%（若有數據）、排除 WR 雙線/三線共振超買（+KD>90）與 RSI 超買+KD 死叉等過熱訊號</p>
-<div class="lazy-summary"><h4>📌 今日重點</h4><div class="lazy-row lazy-green">🟢 買入：<b>2409</b>（已在買入區間（均線 18 以下），可分批…）、<b>3481</b>（已在買入區間（均線 26 以下），可分批…）、<b>6442</b>（已在買入區間（均線 2120 以下），可…）、<b>ASTS</b>（已在買入區間（均線 87 以下），可分批…）</div><div class="lazy-row lazy-yellow">🟡 觀望：<b>4927</b>（守穩 47 可持續觀察，跌破則轉弱）、<b>6805</b>（守穩 1868 可持續觀察，跌破則轉弱）、<b>8299</b>（守穩 1646 可持續觀察，跌破則轉弱）、<b>1802</b>（守穩 62 可持續觀察，跌破則轉弱）、<b>AAOI</b>（守穩 131 可持續觀察，跌破則轉弱）、<b>ONDS</b>（守穩 10 可持續觀察，跌破則轉弱）、<b>CRWV</b>（守穩 100 可持續觀察，跌破則轉弱）、<b>NBIS</b>（守穩 136 可持續觀察，跌破則轉弱）、<b>PLTR</b>（守穩 142 可持續觀察，跌破則轉弱）、<b>TSLA</b>（守穩 369 可持續觀察，跌破則轉弱）、<b>RKLB</b>（守穩 73 可持續觀察，跌破則轉弱）</div><div class="lazy-row lazy-red">🔴 避開：<b>2383</b>（短線過熱，不建議追高，等拉回至 3420…）、<b>3081</b>（短線過熱，不建議追高，等拉回至 2256…）、<b>3653</b>（短線過熱，不建議追高，等拉回至 4354…）、<b>6531</b>（短線過熱，不建議追高，等拉回至 578 …）、<b>1815</b>（站穩 110 之上再考慮買入，跌破 96…）、<b>AEHR</b>（短線過熱，不建議追高，等拉回至 67 再…）、<b>UMC</b>（短線過熱，不建議追高，等拉回至 10 再…）、<b>CRWD</b>（短線過熱，不建議追高，等拉回至 413 …）、<b>ATOM</b>（短線過熱，不建議追高，等拉回至 5 再考…）</div></div>
+<div class="lazy-summary"><h4>📌 今日重點</h4><div class="lazy-row lazy-green">🟢 買入：<b>友達(2409)</b>（已在買入區間（均線 18 以下），可分批…）、<b>群創(3481)</b>（已在買入區間（均線 26 以下），可分批…）、<b>光聖(6442)</b>（已在買入區間（均線 2120 以下），可…）、<b>ASTS</b>（已在買入區間（均線 87 以下），可分批…）</div><div class="lazy-row lazy-yellow">🟡 觀望：<b>泰鼎-KY(4927)</b>（守穩 47 可持續觀察，跌破則轉弱）、<b>富世達(6805)</b>（守穩 1868 可持續觀察，跌破則轉弱）、<b>群聯(8299)</b>（守穩 1646 可持續觀察，跌破則轉弱）、<b>台玻(1802)</b>（守穩 62 可持續觀察，跌破則轉弱）、<b>AAOI</b>（守穩 131 可持續觀察，跌破則轉弱）、<b>ONDS</b>（守穩 10 可持續觀察，跌破則轉弱）、<b>CRWV</b>（守穩 100 可持續觀察，跌破則轉弱）、<b>NBIS</b>（守穩 136 可持續觀察，跌破則轉弱）、<b>PLTR</b>（守穩 142 可持續觀察，跌破則轉弱）、<b>TSLA</b>（守穩 369 可持續觀察，跌破則轉弱）、<b>RKLB</b>（守穩 73 可持續觀察，跌破則轉弱）</div><div class="lazy-row lazy-red">🔴 避開：<b>台光電(2383)</b>（短線過熱，不建議追高，等拉回至 3420…）、<b>聯亞(3081)</b>（短線過熱，不建議追高，等拉回至 2256…）、<b>健策(3653)</b>（短線過熱，不建議追高，等拉回至 4354…）、<b>愛普*(6531)</b>（短線過熱，不建議追高，等拉回至 578 …）、<b>富喬(1815)</b>（站穩 110 之上再考慮買入，跌破 96…）、<b>AEHR</b>（短線過熱，不建議追高，等拉回至 67 再…）、<b>UMC</b>（短線過熱，不建議追高，等拉回至 10 再…）、<b>CRWD</b>（短線過熱，不建議追高，等拉回至 413 …）、<b>ATOM</b>（短線過熱，不建議追高，等拉回至 5 再考…）</div></div>
 <h4 style="color:var(--yellow);margin-bottom:0.5rem">👀 觀察清單</h4>
                 <table class="screen-table">
                 <thead><tr>
@@ -547,14 +555,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">4101.62</span><span class="cost-delta cost-up">+9.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">3427.37</span><span class="cost-delta cost-up">+30.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">2559.66</span><span class="cost-delta cost-up">+74.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">4011.09</span><span class="cost-delta cost-up">+11.6% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--red)">89.0</span><span class="mf-desc">過熱</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.006</span><span class="mf-desc">買方略優</span></div></div>
+        <div class="mf-insight">MFI 資金過熱；買方略占上風；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">4475.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">4088.00 / 3419.75 / 2613.58</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">3850.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">2945.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">1580.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">3850.00↑</span> / <span style="color:var(--green)">2945.00↑</span> / <span style="color:var(--green)">1580.00↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">83.02</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">424.57</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=99.39 / D=89.90</span></div>
@@ -612,6 +624,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--red)">+36 張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--red)">連賣 1 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -944,6 +959,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -1193,14 +1231,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">18.55</span><span class="cost-delta cost-down">-7.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">18.38</span><span class="cost-delta cost-down">-6.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">16.94</span><span class="cost-delta cost-up">+1.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">19.55</span><span class="cost-delta cost-down">-12.0% vs 現價</span></div></div><div class="cost-insight">籌碼結構中性，觀察量能變化</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">63.5</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.007</span><span class="mf-desc">買方略優</span></div></div>
+        <div class="mf-insight">資金流入中；買方略占上風；OBV 背離（主力可能吸貨）</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">17.20</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">18.33 / 17.55 / 16.18</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">19.25 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">14.80 ↑</span></div>
-        <div class="metric "><span class="label">MA60 扣抵</span><span class="value">17.25 →</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">19.25↓</span> / <span style="color:var(--green)">14.80↑</span> / <span style="color:var(--muted)">17.25→</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">48.24</span></div>
         <div class="metric bearish"><span class="label">MACD</span><span class="value">0.73</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=19.83 / D=33.77</span></div>
@@ -1258,6 +1300,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--green)">-11.2 萬張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--red)">連賣 1 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -1590,6 +1635,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -1839,14 +1907,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2966.52</span><span class="cost-delta cost-down">-4.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2243.96</span><span class="cost-delta cost-up">+25.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1532.56</span><span class="cost-delta cost-up">+84.0% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">79.1</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.118</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">2820.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">2928.00 / 2256.50 / 1552.80</span></div>
-        <div class="metric "><span class="label">MA5 扣抵</span><span class="value">2860.00 →</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">1690.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">644.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--muted)">2860.00→</span> / <span style="color:var(--green)">1690.00↑</span> / <span style="color:var(--green)">644.00↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">71.72</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">378.66</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=65.36 / D=80.96</span></div>
@@ -2131,6 +2203,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -2380,14 +2475,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">25.09</span><span class="cost-delta cost-down">-6.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">25.99</span><span class="cost-delta cost-down">-9.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">26.26</span><span class="cost-delta cost-down">-10.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">27.00</span><span class="cost-delta cost-down">-13.3% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">57.3</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.297</span><span class="mf-desc">賣方主導</span></div></div>
+        <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 下降，量能萎縮</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">23.40</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">25.05 / 25.53 / 25.35</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">26.15 ↓</span></div>
-        <div class="metric bearish"><span class="label">MA20 扣抵</span><span class="value">25.00 ↓</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">28.80 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">26.15↓</span> / <span style="color:var(--red)">25.00↓</span> / <span style="color:var(--red)">28.80↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">39.56</span></div>
         <div class="metric bearish"><span class="label">MACD</span><span class="value">-0.20</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=6.78 / D=14.48</span></div>
@@ -2445,6 +2544,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--green)">-6.1 萬張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 3 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -2777,6 +2879,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -3026,14 +3151,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">5282.53</span><span class="cost-delta cost-up">+1.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">4306.95</span><span class="cost-delta cost-up">+24.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">3428.70</span><span class="cost-delta cost-up">+56.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">4997.78</span><span class="cost-delta cost-up">+7.4% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">66.3</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.012</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">5370.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">5296.00 / 4354.25 / 3564.00</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">5020.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">3940.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">2430.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">5020.00↑</span> / <span style="color:var(--green)">3940.00↑</span> / <span style="color:var(--green)">2430.00↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">76.51</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">456.75</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=84.82 / D=86.19</span></div>
@@ -3076,21 +3205,24 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--green)">-409 張</span>
-                        <span class="inst-detail">買超 3 日 / 賣超 7 日</span>
+                        <span class="inst-val" style="color:var(--green)">-331 張</span>
+                        <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
                         <span class="inst-val" style="color:var(--red)">+1.2 千張</span>
-                        <span class="inst-detail">買超 8 日 / 賣超 2 日</span>
+                        <span class="inst-detail">買超 7 日 / 賣超 2 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--green)">-320 張</span>
+                        <span class="inst-val" style="color:var(--green)">-327 張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--red)">+445 張</span>
+                        <span class="inst-val" style="color:var(--red)">+506 張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 1 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -3153,10 +3285,10 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-171 張</td>
                     </tr><tr>
                         <td>04/13</td>
-                        <td style="color:var(--green)">-72 張</td>
-                        <td style="color:var(--red)">+10 張</td>
-                        <td style="color:var(--green)">-2 張</td>
-                        <td style="color:var(--green)">-62 張</td>
+                        <td style="color:var(--red)">+7 張</td>
+                        <td style="color:var(--muted)">+0 張</td>
+                        <td style="color:var(--green)">-8 張</td>
+                        <td style="color:var(--green)">-1 張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -3423,6 +3555,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -3672,14 +3827,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">53.33</span><span class="cost-delta cost-down">-0.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">49.74</span><span class="cost-delta cost-up">+7.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">45.32</span><span class="cost-delta cost-up">+17.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">51.40</span><span class="cost-delta cost-up">+3.7% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">71.5</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.014</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">53.30</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">53.06 / 46.61 / 41.90</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">52.20 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">42.50 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">37.70 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">52.20↑</span> / <span style="color:var(--green)">42.50↑</span> / <span style="color:var(--green)">37.70↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">64.51</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">2.97</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=75.65 / D=80.16</span></div>
@@ -3737,6 +3896,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--red)">+4.5 千張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 2 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -4069,6 +4231,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -4318,14 +4503,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">2242.53</span><span class="cost-delta cost-down">-16.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">2155.50</span><span class="cost-delta cost-down">-12.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1934.36</span><span class="cost-delta cost-down">-2.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">2310.00</span><span class="cost-delta cost-down">-18.6% vs 現價</span></div></div><div class="cost-insight">籌碼結構中性，觀察量能變化</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">61.1</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.298</span><span class="mf-desc">賣方主導</span></div></div>
+        <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 下降，量能萎縮</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">1880.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">2170.00 / 2120.50 / 1899.58</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">2370.00 ↓</span></div>
-        <div class="metric bearish"><span class="label">MA20 扣抵</span><span class="value">2080.00 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">1235.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">2370.00↓</span> / <span style="color:var(--red)">2080.00↓</span> / <span style="color:var(--green)">1235.00↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">43.22</span></div>
         <div class="metric bearish"><span class="label">MACD</span><span class="value">47.01</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=9.38 / D=23.48</span></div>
@@ -4383,6 +4572,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--green)">-2.7 千張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--red)">連賣 2 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -4715,6 +4907,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -4964,14 +5179,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">765.76</span><span class="cost-delta cost-up">+2.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">640.45</span><span class="cost-delta cost-up">+23.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">552.32</span><span class="cost-delta cost-up">+42.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">699.74</span><span class="cost-delta cost-up">+12.6% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">71.6</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.087</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">788.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">753.40 / 577.50 / 498.76</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">682.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">509.00 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">515.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">682.00↑</span> / <span style="color:var(--green)">509.00↑</span> / <span style="color:var(--green)">515.00↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">79.83</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">75.59</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=79.35 / D=86.47</span></div>
@@ -5029,6 +5248,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--red)">+3.6 千張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 2 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -5361,6 +5583,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -5610,14 +5855,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1940.41</span><span class="cost-delta cost-down">-1.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1881.79</span><span class="cost-delta cost-up">+1.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1701.46</span><span class="cost-delta cost-up">+12.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">1899.59</span><span class="cost-delta cost-up">+0.8% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--yellow)">43.3</span><span class="mf-desc">流出</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.244</span><span class="mf-desc">賣方主導</span></div></div>
+        <div class="mf-insight">資金流出中；賣方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">1915.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">1924.00 / 1867.75 / 1703.08</span></div>
-        <div class="metric "><span class="label">MA5 扣抵</span><span class="value">1895.00 →</span></div>
-        <div class="metric "><span class="label">MA20 扣抵</span><span class="value">1905.00 →</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">1280.00 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--muted)">1895.00→</span> / <span style="color:var(--muted)">1905.00→</span> / <span style="color:var(--green)">1280.00↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">54.90</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">39.74</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=55.42 / D=66.85</span></div>
@@ -5675,6 +5924,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--green)">-947 張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 4 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -6007,6 +6259,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -6256,14 +6531,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">1721.00</span><span class="cost-delta cost-down">-2.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">1660.63</span><span class="cost-delta cost-up">+1.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">1850.52</span><span class="cost-delta cost-down">-9.2% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">50.1</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.304</span><span class="mf-desc">賣方主導</span></div></div>
+        <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 下降，量能萎縮</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">1680.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">1712.00 / 1646.00 / 1838.92</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">1635.00 ↑</span></div>
-        <div class="metric "><span class="label">MA20 扣抵</span><span class="value">1650.00 →</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">1980.00 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">1635.00↑</span> / <span style="color:var(--muted)">1650.00→</span> / <span style="color:var(--red)">1980.00↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">48.69</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">-18.32</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=39.39 / D=55.04</span></div>
@@ -6548,6 +6827,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -6797,14 +7099,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">71.05</span><span class="cost-delta cost-down">-8.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">66.76</span><span class="cost-delta cost-down">-2.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">60.09</span><span class="cost-delta cost-up">+8.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">69.51</span><span class="cost-delta cost-down">-6.5% vs 現價</span></div></div><div class="cost-insight">現價貼近中期成本，攻防關鍵位</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">67.8</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.082</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">65.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">69.44 / 62.13 / 56.80</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">70.90 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">53.30 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">45.95 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">70.90↓</span> / <span style="color:var(--green)">53.30↑</span> / <span style="color:var(--green)">45.95↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">53.35</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">3.81</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=50.42 / D=61.12</span></div>
@@ -6862,6 +7168,9 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
                         <span class="inst-val" style="color:var(--red)">+5.2 萬張</span>
+                    </div><div class="inst-card">
+                        <span class="inst-label">外資動態</span>
+                        <span class="inst-val" style="color:var(--green)">連買 3 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -6937,8 +7246,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             <div class="inst-grid" style="grid-template-columns: repeat(3, 1fr)">
                 <div class="inst-card">
                     <span class="inst-label">融資餘額</span>
-                    <span class="inst-val">73 張</span>
-                    <span class="inst-detail" style="color:var(--green)">變化 -1 張</span>
+                    <span class="inst-val">62 張</span>
+                    <span class="inst-detail" style="color:var(--green)">變化 -17 張</span>
                 </div>
                 <div class="inst-card">
                     <span class="inst-label">融券餘額</span>
@@ -6947,7 +7256,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 </div>
                 <div class="inst-card">
                     <span class="inst-label">券資比</span>
-                    <span class="inst-val">N/A</span>
+                    <span class="inst-val">31338.5</span>
                 </div>
             </div></div>
     <div class="revenue-box">
@@ -7192,6 +7501,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.font = '9px -apple-system, sans-serif';
                     ctx.textAlign = 'left';
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
+                });
+
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
                 });
 
                 ctx.restore();
@@ -7443,14 +7775,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">117.34</span><span class="cost-delta cost-down">-7.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">113.71</span><span class="cost-delta cost-down">-4.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">107.15</span><span class="cost-delta cost-up">+1.3% vs 現價</span></div></div><div class="cost-insight">籌碼結構中性，觀察量能變化</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">50.9</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.144</span><span class="mf-desc">賣方主導</span></div></div>
+        <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 背離（主力可能吸貨）</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">108.50</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">113.60 / 110.05 / 104.55</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">118.00 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">104.50 ↑</span></div>
-        <div class="metric "><span class="label">MA60 扣抵</span><span class="value">108.50 →</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">118.00↓</span> / <span style="color:var(--green)">104.50↑</span> / <span style="color:var(--muted)">108.50→</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">48.83</span></div>
         <div class="metric bearish"><span class="label">MACD</span><span class="value">2.55</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=34.17 / D=41.41</span></div>
@@ -7735,6 +8071,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -7985,14 +8344,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">80.37</span><span class="cost-delta cost-down">-4.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">86.36</span><span class="cost-delta cost-down">-11.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">90.59</span><span class="cost-delta cost-down">-15.7% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--yellow)">38.6</span><span class="mf-desc">流出</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.084</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流出中；賣方略占上風；OBV 下降，量能萎縮</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">76.40</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">80.16 / 86.70 / 90.38</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">81.00 ↓</span></div>
-        <div class="metric "><span class="label">MA20 扣抵</span><span class="value">78.67 →</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">122.09 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">81.00↓</span> / <span style="color:var(--muted)">78.67→</span> / <span style="color:var(--red)">122.09↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">40.92</span></div>
         <div class="metric bearish"><span class="label">MACD</span><span class="value">-2.56</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=9.46 / D=21.00</span></div>
@@ -8277,6 +8640,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -8526,14 +8912,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">152.93</span><span class="cost-delta cost-up">+6.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">127.51</span><span class="cost-delta cost-up">+27.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">101.45</span><span class="cost-delta cost-up">+59.8% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">69.9</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.205</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 背離（主力可能出貨）</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">162.17</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">152.67 / 131.11 / 93.05</span></div>
-        <div class="metric "><span class="label">MA5 扣抵</span><span class="value">163.47 →</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">98.21 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">39.57 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--muted)">163.47→</span> / <span style="color:var(--green)">98.21↑</span> / <span style="color:var(--green)">39.57↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">64.51</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">16.12</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=82.61 / D=68.09</span></div>
@@ -8818,6 +9208,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -9067,14 +9480,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">10.73</span><span class="cost-delta cost-down">-1.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">9.74</span><span class="cost-delta cost-up">+8.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">10.20</span><span class="cost-delta cost-up">+3.4% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">65.6</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.009</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">10.55</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">10.75 / 9.70 / 10.06</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">10.73 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">8.80 ↑</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">11.27 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">10.73↓</span> / <span style="color:var(--green)">8.80↑</span> / <span style="color:var(--red)">11.27↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">55.34</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">0.20</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=63.19 / D=69.53</span></div>
@@ -9359,6 +9776,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -9608,6 +10048,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">94.04</span><span class="cost-delta cost-up">+2.0% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">67.75</span><span class="cost-delta cost-up">+41.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">54.38</span><span class="cost-delta cost-up">+76.4% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--red)">89.2</span><span class="mf-desc">過熱</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.227</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">MFI 資金過熱；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     <div class="short-term-card bearish">
         <div class="st-badge bearish">⚡ 偏空</div>
         <div>
@@ -9625,9 +10071,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">95.91</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">94.53 / 67.26 / 45.31</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">90.15 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">32.52 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">26.88 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">90.15↑</span> / <span style="color:var(--green)">32.52↑</span> / <span style="color:var(--green)">26.88↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">82.93</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">14.86</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=87.78 / D=89.82</span></div>
@@ -9912,6 +10356,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -10161,6 +10628,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">116.94</span><span class="cost-delta cost-down">-5.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">101.39</span><span class="cost-delta cost-up">+8.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">92.24</span><span class="cost-delta cost-up">+19.4% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">77.4</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.170</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     <div class="short-term-card bearish">
         <div class="st-badge bearish">⚡ 偏空</div>
         <div>
@@ -10178,9 +10651,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">110.14</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">116.54 / 99.82 / 90.83</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">117.43 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">74.81 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">99.53 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">117.43↓</span> / <span style="color:var(--green)">74.81↑</span> / <span style="color:var(--green)">99.53↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">58.12</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">9.09</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=66.94 / D=81.87</span></div>
@@ -10465,6 +10936,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -10714,14 +11208,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">157.23</span><span class="cost-delta cost-down">-6.4% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">136.58</span><span class="cost-delta cost-up">+7.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">114.17</span><span class="cost-delta cost-up">+28.9% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">72.4</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.111</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 下降，量能萎縮</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">147.16</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">155.22 / 136.28 / 112.27</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">159.16 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">100.82 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">94.91 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">159.16↓</span> / <span style="color:var(--green)">100.82↑</span> / <span style="color:var(--green)">94.91↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">57.93</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">12.79</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=63.12 / D=75.60</span></div>
@@ -11006,6 +11504,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -11255,14 +11776,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">145.75</span><span class="cost-delta cost-down">-1.8% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">140.18</span><span class="cost-delta cost-up">+2.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">143.32</span><span class="cost-delta cost-down">-0.2% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--yellow)">45.4</span><span class="mf-desc">流出</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.099</span><span class="mf-desc">買方略優</span></div></div>
+        <div class="mf-insight">資金流出中；買方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">143.09</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">145.83 / 142.38 / 144.09</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">145.89 ↓</span></div>
-        <div class="metric "><span class="label">MA20 扣抵</span><span class="value">143.06 →</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">151.86 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">145.89↓</span> / <span style="color:var(--muted)">143.06→</span> / <span style="color:var(--red)">151.86↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">48.59</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">-0.75</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=60.74 / D=68.69</span></div>
@@ -11547,6 +12072,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -11796,14 +12344,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">12.37</span><span class="cost-delta cost-down">-0.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">10.51</span><span class="cost-delta cost-up">+16.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">10.13</span><span class="cost-delta cost-up">+21.3% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">73.2</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.240</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">12.28</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">12.39 / 10.22 / 10.00</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">12.64 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">8.87 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">10.58 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">12.64↓</span> / <span style="color:var(--green)">8.87↑</span> / <span style="color:var(--green)">10.58↑</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">69.01</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">0.78</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=85.94 / D=87.95</span></div>
@@ -12088,6 +12640,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -12337,14 +12912,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">384.21</span><span class="cost-delta cost-down">-2.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">369.99</span><span class="cost-delta cost-up">+1.7% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">391.44</span><span class="cost-delta cost-down">-3.9% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">65.1</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.016</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">376.30</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">383.29 / 369.13 / 392.16</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">392.50 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">361.83 ↑</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">416.56 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">392.50↓</span> / <span style="color:var(--green)">361.83↑</span> / <span style="color:var(--red)">416.56↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">48.92</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">-0.28</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=54.22 / D=58.21</span></div>
@@ -12629,6 +13208,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -12878,14 +13480,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">445.98</span><span class="cost-delta cost-up">+0.5% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">407.59</span><span class="cost-delta cost-up">+9.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">403.89</span><span class="cost-delta cost-up">+11.0% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">64.9</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.131</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">資金流入中；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">448.13</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">448.59 / 412.58 / 411.20</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">433.15 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">369.58 ↑</span></div>
-        <div class="metric "><span class="label">MA60 扣抵</span><span class="value">444.62 →</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">433.15↑</span> / <span style="color:var(--green)">369.58↑</span> / <span style="color:var(--muted)">444.62→</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">59.12</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">10.61</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=80.85 / D=85.94</span></div>
@@ -13170,6 +13776,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -13419,6 +14048,12 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">86.87</span><span class="cost-delta cost-down">-8.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">74.06</span><span class="cost-delta cost-up">+7.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">72.54</span><span class="cost-delta cost-up">+9.8% vs 現價</span></div></div><div class="cost-insight">主力短期持倉獲利，支撐力道強</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">66.4</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.061</span><span class="mf-desc">賣方略優</span></div></div>
+        <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
     <div class="short-term-card bearish">
         <div class="st-badge bearish">⚡ 偏空</div>
         <div>
@@ -13436,9 +14071,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">79.68</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">86.08 / 73.41 / 72.16</span></div>
-        <div class="metric bearish"><span class="label">MA5 扣抵</span><span class="value">89.46 ↓</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">60.93 ↑</span></div>
-        <div class="metric bearish"><span class="label">MA60 扣抵</span><span class="value">85.68 ↓</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--red)">89.46↓</span> / <span style="color:var(--green)">60.93↑</span> / <span style="color:var(--red)">85.68↓</span></span></div>
         <div class="metric "><span class="label">RSI(14)</span><span class="value">54.47</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">4.34</span></div>
         <div class="metric bearish"><span class="label">KD</span><span class="value">K=53.95 / D=71.66</span></div>
@@ -13723,6 +14356,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -13972,14 +14628,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">7.88</span><span class="cost-delta cost-up">+9.1% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">7.09</span><span class="cost-delta cost-up">+21.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">5.48</span><span class="cost-delta cost-up">+57.0% vs 現價</span></div></div><div class="cost-insight">主力逐步墊高成本，多頭氣氛明確</div></div>
 
+    <div class="money-flow-box">
+        <div class="mf-title">💰 資金流向</div>
+        <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--red)">91.5</span><span class="mf-desc">過熱</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.273</span><span class="mf-desc">買方主導</span></div></div>
+        <div class="mf-insight">MFI 資金過熱；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
     
 
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">8.60</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">6.82 / 5.10 / 4.59</span></div>
-        <div class="metric bullish"><span class="label">MA5 扣抵</span><span class="value">6.34 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA20 扣抵</span><span class="value">3.74 ↑</span></div>
-        <div class="metric bullish"><span class="label">MA60 扣抵</span><span class="value">3.05 ↑</span></div>
+        <div class="metric"><span class="label">扣抵(5/20/60)</span><span class="value"><span style="color:var(--green)">6.34↑</span> / <span style="color:var(--green)">3.74↑</span> / <span style="color:var(--green)">3.05↑</span></span></div>
         <div class="metric bearish"><span class="label">RSI(14)</span><span class="value">78.94</span></div>
         <div class="metric bullish"><span class="label">MACD</span><span class="value">0.70</span></div>
         <div class="metric "><span class="label">KD</span><span class="value">K=82.54 / D=73.97</span></div>
@@ -14265,6 +14925,29 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     ctx.fillText(`${lv.label} ${val.toFixed(1)}`, right + 12, y + 3);
                 });
 
+                // === 5. 大量日標記（成交量 > 均量 2 倍）===
+                const volData = data.volume || [];
+                const volMa5 = [];
+                for (let i = 0; i < volData.length; i++) {
+                    if (i < 4) { volMa5.push(null); continue; }
+                    let sum = 0;
+                    for (let j = i-4; j <= i; j++) sum += (volData[j] || 0);
+                    volMa5.push(sum / 5);
+                }
+                volData.forEach((v, i) => {
+                    if (v == null || volMa5[i] == null) return;
+                    if (v > volMa5[i] * 2) {
+                        const x = xScale.getPixelForValue(i);
+                        const closeVal = data.close[i];
+                        if (closeVal == null) return;
+                        const y = yScale.getPixelForValue(closeVal);
+                        ctx.fillStyle = 'rgba(245,158,11,0.8)';
+                        ctx.font = 'bold 12px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('★', x, y - 12);
+                    }
+                });
+
                 ctx.restore();
             }
         };
@@ -14453,7 +15136,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-26 10:13
+    Stock Analysis CLI | 報告自動產生於 2026-04-26 11:15
 </footer>
 
 <script>
