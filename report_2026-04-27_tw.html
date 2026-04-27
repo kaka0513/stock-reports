@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-27 18:01</title>
+<title>股票分析報告 - 2026-04-27 18:34</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -74,6 +74,26 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .money-flow-box .mf-value { font-size: 1.1rem; font-weight: 700; }
 .money-flow-box .mf-desc { font-size: 0.72rem; color: var(--muted); }
 .money-flow-box .mf-insight { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.day-trade-box { padding: 0.8rem 1rem; background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; margin-bottom: 1rem; }
+/* 動能追價分析 */
+.momentum-box { padding: 0.8rem 1rem; border: 1px solid rgba(16,185,129,0.25); border-radius: 8px; margin-bottom: 1rem; }
+.momentum-box .mom-header { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.momentum-box .mom-title { font-weight: 700; color: var(--green); font-size: 0.9rem; }
+.momentum-box .mom-stars { font-size: 0.9rem; letter-spacing: 2px; color: var(--yellow); }
+.momentum-box .mom-levels { display: flex; gap: 0.8rem; margin-top: 0.5rem; flex-wrap: wrap; font-size: 0.85rem; }
+.momentum-box .mom-level { background: var(--bg); padding: 0.3rem 0.7rem; border-radius: 5px; }
+.day-trade-box .dt-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+.day-trade-box .dt-title { font-weight: 700; color: var(--yellow); font-size: 0.9rem; }
+.day-trade-box .dt-stars { font-size: 1rem; letter-spacing: 2px; }
+.day-trade-box .dt-score { font-size: 0.85rem; font-weight: 600; }
+.day-trade-box .dt-meta { display: flex; gap: 1rem; font-size: 0.82rem; color: var(--muted); flex-wrap: wrap; margin-bottom: 0.4rem; }
+.day-trade-box .dt-reasons { color: var(--text); }
+.day-trade-box .dt-swing { margin: 0.5rem 0; padding: 0.4rem 0.8rem; background: rgba(16,185,129,0.12); border-left: 3px solid var(--green); border-radius: 4px; font-size: 0.85rem; color: var(--green); }
+.day-trade-box .dt-swing-badge { font-weight: 700; margin-right: 0.5rem; }
+.day-trade-box .dt-levels { display: flex; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.day-trade-box .dt-level-group { display: flex; flex-direction: column; gap: 2px; }
+.day-trade-box .dt-level-title { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+.day-trade-box .dt-est, .day-trade-box .dt-key { font-size: 0.85rem; color: var(--text); }
 .inst-details[open] .inst-toggle { margin-bottom: 0.3rem; }
 .prediction-box { margin: 1rem 0; }
 .pred-title { font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
@@ -349,7 +369,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(96,165,250,0.25);color:var(--accent);font-size:0.75rem;vertical-align:middle">公開觀察版</span></h1>
-<p class="subtitle">2026-04-27 18:01　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
+<p class="subtitle">2026-04-27 18:34　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">13</div><div class="label">分析股票數</div></div>
@@ -491,6 +511,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--yellow)">46.8</span><span class="mf-desc">流出</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.126</span><span class="mf-desc">賣方主導</span></div></div>
         <div class="mf-insight">資金流出中；賣方強勢主導；OBV 下降，量能萎縮</div>
+    </div>
+
+    
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4.5/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 159.8M</span>
+            <span>日均波幅 5.3%</span>
+            <span>昨振 6.9%</span>
+            <span class="dt-reasons">流動性充足、波幅 5.3%（大）、昨振 6.9%（大）、量比 1.6（放量）</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">97.4</b>　低 <b style="color:var(--green)">90.4</b>　空間 7.5%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 95.6</span>　<span style="color:var(--green)">昨低 89.1</span>　<span>昨收 93.9</span></span>
+            </div>
+        </div>
     </div>
 
     <div class="short-term-card bullish">
@@ -1181,6 +1228,42 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-insight">MFI 資金過熱；買方略占上風；OBV 上升，量能堆積</div>
     </div>
 
+    <div class="momentum-box" style="background:rgba(239,68,68,0.08)">
+        <div class="mom-header">
+            <span class="mom-title">🚀 動能追價</span>
+            <span class="mom-stars">★★★★☆</span>
+            <span class="mom-action" style="color:var(--red);font-weight:700">🔴 不追</span>
+        </div>
+        <div class="mom-reason" style="font-size:0.85rem;color:var(--text);margin:0.3rem 0">RSI 極端過熱，不追</div>
+        <div class="mom-factors" style="font-size:0.78rem;color:var(--muted)">近期高點附近、均線發散中、量能放大、RSI 85（極端過熱）、MACD 加速</div>
+        
+    </div>
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4.0/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 3.3M</span>
+            <span>日均波幅 5.0%</span>
+            <span>昨振 6.9%</span>
+            <span class="dt-reasons">流動性尚可、波幅 5.0%（大）、昨振 6.9%（大）、量比 1.4、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">4895.9</b>　低 <b style="color:var(--green)">4564.1</b>　空間 7.0%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 4800.0</span>　<span style="color:var(--green)">昨低 4475.0</span>　<span>昨收 4730.0</span></span>
+            </div>
+        </div>
+    </div>
+
     
 
     <div class="metrics-grid">
@@ -1860,6 +1943,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     
 
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 364.1M</span>
+            <span>日均波幅 6.5%</span>
+            <span>昨振 4.6%</span>
+            <span class="dt-reasons">流動性充足、波幅 6.5%（大）、昨振 4.6%（大）、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">18.14</b>　低 <b style="color:var(--green)">16.56</b>　空間 9.1%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 17.5</span>　<span style="color:var(--green)">昨低 16.7</span>　<span>昨收 17.35</span></span>
+            </div>
+        </div>
+    </div>
+
+    
+
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">17.35</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">17.95 / 17.68 / 16.18</span></div>
@@ -2534,6 +2644,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
     </div>
 
+    
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3.5/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 3.6M</span>
+            <span>日均波幅 9.8%</span>
+            <span>昨振 13.0%</span>
+            <span class="dt-reasons">流動性尚可、波幅 9.8%（大）、昨振 13.0%（大）、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">2713.6</b>　低 <b style="color:var(--green)">2366.4</b>　空間 13.7%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 2870.0</span>　<span style="color:var(--green)">昨低 2540.0</span>　<span>昨收 2540.0</span></span>
+            </div>
+        </div>
+    </div>
+
     <div class="short-term-card bearish">
         <div class="st-badge bearish">⚡ 偏空</div>
         <div>
@@ -3106,12 +3243,39 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">24.68</span><span class="cost-delta cost-down">-1.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">25.92</span><span class="cost-delta cost-down">-6.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">26.23</span><span class="cost-delta cost-down">-7.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">26.56</span><span class="cost-delta cost-down">-8.5% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">24.68</span><span class="cost-delta cost-down">-1.6% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">25.92</span><span class="cost-delta cost-down">-6.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">26.23</span><span class="cost-delta cost-down">-7.3% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">26.74</span><span class="cost-delta cost-down">-9.1% vs 現價</span></div></div><div class="cost-insight">短期成本下移，籌碼鬆動</div></div>
 
     <div class="money-flow-box">
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">61.4</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.234</span><span class="mf-desc">賣方主導</span></div></div>
         <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 下降，量能萎縮</div>
+    </div>
+
+    
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 310.0M</span>
+            <span>日均波幅 5.5%</span>
+            <span>昨振 7.2%</span>
+            <span class="dt-reasons">流動性充足、波幅 5.5%（大）、昨振 7.2%（大）</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">25.23</b>　低 <b style="color:var(--green)">23.37</b>　空間 7.7%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 24.7</span>　<span style="color:var(--green)">昨低 22.95</span>　<span>昨收 24.3</span></span>
+            </div>
+        </div>
     </div>
 
     <div class="short-term-card bullish">
@@ -3144,7 +3308,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bearish"><span class="label">趨勢</span><span class="value">短空待確認</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">25.92</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">26.23</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">26.56</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">26.74</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">4.41</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -3174,24 +3338,24 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                 <div class="inst-grid">
                     <div class="inst-card">
                         <span class="inst-label">外資</span>
-                        <span class="inst-val" style="color:var(--green)">-2.6 萬張</span>
-                        <span class="inst-detail">買超 4 日 / 賣超 6 日</span>
+                        <span class="inst-val" style="color:var(--red)">+12.2 萬張</span>
+                        <span class="inst-detail">買超 5 日 / 賣超 5 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">投信</span>
-                        <span class="inst-val" style="color:var(--green)">-2.7 萬張</span>
+                        <span class="inst-val" style="color:var(--green)">-1.4 萬張</span>
                         <span class="inst-detail">買超 1 日 / 賣超 9 日</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--green)">-1.8 萬張</span>
+                        <span class="inst-val" style="color:var(--red)">+3.9 千張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--green)">-7.0 萬張</span>
+                        <span class="inst-val" style="color:var(--red)">+11.1 萬張</span>
                     </div><div class="inst-card">
                         <span class="inst-label">外資動態</span>
-                        <span class="inst-val" style="color:var(--green)">連買 2 天</span>
+                        <span class="inst-val" style="color:var(--red)">連賣 1 天</span>
                     </div>
                 </div>
                 <details class="inst-details">
@@ -3199,30 +3363,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     <table class="inst-table">
                         <thead><tr><th>日期</th><th>外資</th><th>投信</th><th>自營商</th><th>合計</th></tr></thead>
                         <tbody><tr>
-                        <td>04/27</td>
-                        <td style="color:var(--red)">+1.1 萬張</td>
-                        <td style="color:var(--green)">-162 張</td>
-                        <td style="color:var(--red)">+2.8 千張</td>
-                        <td style="color:var(--red)">+1.4 萬張</td>
-                    </tr><tr>
-                        <td>04/24</td>
-                        <td style="color:var(--green)">-1.5 萬張</td>
-                        <td style="color:var(--green)">-4.1 千張</td>
-                        <td style="color:var(--green)">-2.9 千張</td>
-                        <td style="color:var(--green)">-2.2 萬張</td>
-                    </tr><tr>
-                        <td>04/23</td>
-                        <td style="color:var(--green)">-3.3 萬張</td>
-                        <td style="color:var(--green)">-5.3 千張</td>
-                        <td style="color:var(--green)">-1.0 萬張</td>
-                        <td style="color:var(--green)">-4.9 萬張</td>
-                    </tr><tr>
-                        <td>04/22</td>
-                        <td style="color:var(--green)">-3.5 千張</td>
-                        <td style="color:var(--green)">-4.8 千張</td>
-                        <td style="color:var(--red)">+268 張</td>
-                        <td style="color:var(--green)">-8.1 千張</td>
-                    </tr><tr>
                         <td>04/21</td>
                         <td style="color:var(--green)">-2.7 萬張</td>
                         <td style="color:var(--green)">-7.6 千張</td>
@@ -3234,12 +3374,6 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--green)">-5.3 千張</td>
                         <td style="color:var(--red)">+1.4 千張</td>
                         <td style="color:var(--red)">+2.3 萬張</td>
-                    </tr><tr>
-                        <td>04/17</td>
-                        <td style="color:var(--green)">-11.1 萬張</td>
-                        <td style="color:var(--green)">-1.2 千張</td>
-                        <td style="color:var(--green)">-4.6 千張</td>
-                        <td style="color:var(--green)">-11.7 萬張</td>
                     </tr><tr>
                         <td>04/16</td>
                         <td style="color:var(--green)">-4.9 萬張</td>
@@ -3258,6 +3392,36 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td style="color:var(--red)">+2.7 千張</td>
                         <td style="color:var(--red)">+3.6 千張</td>
                         <td style="color:var(--red)">+8.6 萬張</td>
+                    </tr><tr>
+                        <td>04/13</td>
+                        <td style="color:var(--red)">+2.2 萬張</td>
+                        <td style="color:var(--green)">-1.6 千張</td>
+                        <td style="color:var(--red)">+2.4 千張</td>
+                        <td style="color:var(--red)">+2.3 萬張</td>
+                    </tr><tr>
+                        <td>04/10</td>
+                        <td style="color:var(--green)">-9.3 萬張</td>
+                        <td style="color:var(--green)">-104 張</td>
+                        <td style="color:var(--green)">-7.1 千張</td>
+                        <td style="color:var(--green)">-10.0 萬張</td>
+                    </tr><tr>
+                        <td>04/09</td>
+                        <td style="color:var(--green)">-1.4 萬張</td>
+                        <td style="color:var(--green)">-1.5 千張</td>
+                        <td style="color:var(--red)">+5.3 千張</td>
+                        <td style="color:var(--green)">-1.1 萬張</td>
+                    </tr><tr>
+                        <td>04/08</td>
+                        <td style="color:var(--red)">+13.2 萬張</td>
+                        <td style="color:var(--green)">-113 張</td>
+                        <td style="color:var(--red)">+7.3 千張</td>
+                        <td style="color:var(--red)">+13.9 萬張</td>
+                    </tr><tr>
+                        <td>04/07</td>
+                        <td style="color:var(--green)">-5.2 萬張</td>
+                        <td style="color:var(--green)">-32 張</td>
+                        <td style="color:var(--green)">-1.0 千張</td>
+                        <td style="color:var(--green)">-5.3 萬張</td>
                     </tr></tbody>
                     </table>
                 </details></div>
@@ -3804,6 +3968,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     
 
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 1.2M</span>
+            <span>日均波幅 6.7%</span>
+            <span>昨振 11.7%</span>
+            <span class="dt-reasons">波幅 6.7%（大）、昨振 11.7%（大）、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">5193.1</b>　低 <b style="color:var(--green)">4726.9</b>　空間 9.4%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 5500.0</span>　<span style="color:var(--green)">昨低 4920.0</span>　<span>昨收 4960.0</span></span>
+            </div>
+        </div>
+    </div>
+
+    
+
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">4960.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">5284.00 / 4405.25 / 3606.17</span></div>
@@ -3981,7 +4172,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/23</span><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ZME84ZFdETTJ2UzhQcnB4NUk4VHpNbGVhdWlSUXBxS29RZXNyQlBZZWwtWWRPNGV2WGcwNkJvdUROUkFhSUt2VXpUd2RYSXNucXZGRkVQZWlLYkVkZWdj0gFkQVVfeXFMT1FwcExtclBRLUFTVDFyWUpoYjVZUkVjSzlpUWRLWTd0U2ZPa291aHFBZmNhQlMyT2dqQWJIbHM4S2EwTmFEU3pUb2dhWS0tb2VLWUlQMFFqRGl5bTlyeHBmeTl2SA?oc=5" target="_blank" rel="noopener">健策、矽力*-KY等16檔4/24起打入處置 71檔列注意股 - 自由財經</a> <span class="news-pub">- 自由財經</span></li><li><span class="news-date">04/22</span><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQRG16a2paQlZQc0RIRm5ZQTZfc19qWmZvaFJYbF9TN2Q4bHV4ZDVvRWZ3NllRdUVqUFZQZ1V0cE9zS3RVRFcxenc2aGNyc2N0ZnNfUGRuOFc0ZHRYb1VpamJKWUpFbThidWNTaFAweFZ3M3V3VzBjdUlucHlUdmdwOA?oc=5" target="_blank" rel="noopener">健策(3653)做什麼的？股價2880→5570元月飆93%，為何比奇鋐雙鴻還會漲？手握3王牌最新目標價曝光 - 今周刊</a> <span class="news-pub">- 今周刊</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/24</span><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE9OVFNobHREd3R1aHZ1ZGUxdzZKMVZ5SlBXdFgtOTdoNml6QUFFbnF5bHExZmVwZW9oeTcxcUg5TWd2WTJsdEFZS1U1akpfYlJj0gFWQVVfeXFMUHlBRmNiTHduamxhMUJKV1oyZ2NIbVFycV8yTnFiOE1XRnI2UTEtTXZzMzB1QTBsSlM0c0g2SDJRclBFMzk5dFlNZFoxdzRnMmlkRHp2clE?oc=5" target="_blank" rel="noopener">健策、建準 權證選逾150天 - 聯合新聞網</a> <span class="news-pub">- 聯合新聞網</span></li><li><span class="news-date">04/23</span><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ZME84ZFdETTJ2UzhQcnB4NUk4VHpNbGVhdWlSUXBxS29RZXNyQlBZZWwtWWRPNGV2WGcwNkJvdUROUkFhSUt2VXpUd2RYSXNucXZGRkVQZWlLYkVkZWdj0gFkQVVfeXFMT1FwcExtclBRLUFTVDFyWUpoYjVZUkVjSzlpUWRLWTd0U2ZPa291aHFBZmNhQlMyT2dqQWJIbHM4S2EwTmFEU3pUb2dhWS0tb2VLWUlQMFFqRGl5bTlyeHBmeTl2SA?oc=5" target="_blank" rel="noopener">健策、矽力*-KY等16檔4/24起打入處置 71檔列注意股 - 自由財經</a> <span class="news-pub">- 自由財經</span></li><li><span class="news-date">04/22</span><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQRG16a2paQlZQc0RIRm5ZQTZfc19qWmZvaFJYbF9TN2Q4bHV4ZDVvRWZ3NllRdUVqUFZQZ1V0cE9zS3RVRFcxenc2aGNyc2N0ZnNfUGRuOFc0ZHRYb1VpamJKWUpFbThidWNTaFAweFZ3M3V3VzBjdUlucHlUdmdwOA?oc=5" target="_blank" rel="noopener">健策(3653)做什麼的？股價2880→5570元月飆93%，為何比奇鋐雙鴻還會漲？手握3王牌最新目標價曝光 - 今周刊</a> <span class="news-pub">- 今周刊</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-5"></canvas></div>
@@ -4476,6 +4667,47 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">75.3</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--green)">+0.123</span><span class="mf-desc">買方主導</span></div></div>
         <div class="mf-insight">資金流入中；買方強勢主導；OBV 上升，量能堆積</div>
+    </div>
+
+    <div class="momentum-box" style="background:rgba(16,185,129,0.12)">
+        <div class="mom-header">
+            <span class="mom-title">🚀 動能追價</span>
+            <span class="mom-stars">★★★★★</span>
+            <span class="mom-action" style="color:var(--green);font-weight:700">🟢 可追價</span>
+        </div>
+        <div class="mom-reason" style="font-size:0.85rem;color:var(--text);margin:0.3rem 0">動能極強＋量增，可追價設緊停損</div>
+        <div class="mom-factors" style="font-size:0.78rem;color:var(--muted)">近期高點附近、均線發散中、量能放大、RSI 72（有空間）、MACD 加速</div>
+        <div class="mom-levels">
+            <span class="mom-level">追價進場 <b>58.6</b>（突破新高）</span>
+            <span class="mom-level" style="color:var(--red)">緊停損 <b>55.67</b>（-5.0%）</span>
+            <span class="mom-level" style="color:var(--green)">目標 <b>74.62</b>（+27.3%）</span>
+            <span class="mom-level">R:R 5.47 ✓</span>
+        </div>
+    </div>
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4.5/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 20.5M</span>
+            <span>日均波幅 7.4%</span>
+            <span>昨振 8.4%</span>
+            <span class="dt-reasons">流動性充足、波幅 7.4%（大）、昨振 8.4%（大）、量比 1.3、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">61.64</b>　低 <b style="color:var(--green)">55.56</b>　空間 10.4%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 58.6</span>　<span style="color:var(--green)">昨低 53.7</span>　<span>昨收 58.6</span></span>
+            </div>
+        </div>
     </div>
 
     
@@ -5157,6 +5389,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     
 
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3.0/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 3.1M</span>
+            <span>日均波幅 10.3%</span>
+            <span>昨振 13.5%</span>
+            <span class="dt-reasons">流動性尚可、波幅 10.3%（大）、昨振 13.5%（大）</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">1903.45</b>　低 <b style="color:var(--green)">1646.55</b>　空間 14.5%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 1940.0</span>　<span style="color:var(--green)">昨低 1700.0</span>　<span>昨收 1775.0</span></span>
+            </div>
+        </div>
+    </div>
+
+    
+
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">1775.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">2051.00 / 2105.25 / 1908.58</span></div>
@@ -5830,6 +6089,42 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">68.2</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.057</span><span class="mf-desc">賣方略優</span></div></div>
         <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 背離（主力可能出貨）</div>
+    </div>
+
+    <div class="momentum-box" style="background:rgba(100,116,139,0.08)">
+        <div class="mom-header">
+            <span class="mom-title">🚀 動能追價</span>
+            <span class="mom-stars">★★★☆☆</span>
+            <span class="mom-action" style="color:var(--muted);font-weight:700">⏳ 等拉回</span>
+        </div>
+        <div class="mom-reason" style="font-size:0.85rem;color:var(--text);margin:0.3rem 0">動能尚可，建議等拉回</div>
+        <div class="mom-factors" style="font-size:0.78rem;color:var(--muted)">均線發散中、量能放大、RSI 72（有空間）、MACD 正向但減速</div>
+        
+    </div>
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 7.7M</span>
+            <span>日均波幅 8.2%</span>
+            <span>昨振 11.0%</span>
+            <span class="dt-reasons">流動性充足、波幅 8.2%（大）、昨振 11.0%（大）、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">796.4</b>　低 <b style="color:var(--green)">709.6</b>　空間 11.5%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 793.0</span>　<span style="color:var(--green)">昨低 710.0</span>　<span>昨收 753.0</span></span>
+            </div>
+        </div>
     </div>
 
     
@@ -6506,6 +6801,47 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">51.3</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.124</span><span class="mf-desc">賣方主導</span></div></div>
         <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 上升，量能堆積</div>
+    </div>
+
+    <div class="momentum-box" style="background:rgba(16,185,129,0.12)">
+        <div class="mom-header">
+            <span class="mom-title">🚀 動能追價</span>
+            <span class="mom-stars">★★★★★</span>
+            <span class="mom-action" style="color:var(--green);font-weight:700">🟢 可追價</span>
+        </div>
+        <div class="mom-reason" style="font-size:0.85rem;color:var(--text);margin:0.3rem 0">動能極強＋量增，可追價設緊停損</div>
+        <div class="mom-factors" style="font-size:0.78rem;color:var(--muted)">近期高點附近、均線發散中、量能放大、RSI 63（有空間）、MACD 加速</div>
+        <div class="mom-levels">
+            <span class="mom-level">追價進場 <b>2105.0</b>（突破新高）</span>
+            <span class="mom-level" style="color:var(--red)">緊停損 <b>1994.33</b>（-3.7%）</span>
+            <span class="mom-level" style="color:var(--green)">目標 <b>2297.02</b>（+11.0%）</span>
+            <span class="mom-level">R:R 3.0 ✓</span>
+        </div>
+    </div>
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3.0/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 2.1M</span>
+            <span>日均波幅 6.3%</span>
+            <span>昨振 10.9%</span>
+            <span class="dt-reasons">波幅 6.3%（大）、昨振 10.9%（大）、量比 1.3</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">2161.0</b>　低 <b style="color:var(--green)">1979.0</b>　空間 8.8%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 2105.0</span>　<span style="color:var(--green)">昨低 1880.0</span>　<span>昨收 2070.0</span></span>
+            </div>
+        </div>
     </div>
 
     
@@ -7185,6 +7521,47 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="mf-insight">資金流入中；賣方強勢主導；短長週期資金方向不一致，建議觀望；OBV 背離（主力可能出貨）</div>
     </div>
 
+    <div class="momentum-box" style="background:rgba(245,158,11,0.08)">
+        <div class="mom-header">
+            <span class="mom-title">🚀 動能追價</span>
+            <span class="mom-stars">★★★★★</span>
+            <span class="mom-action" style="color:var(--yellow);font-weight:700">🟡 觀察追價</span>
+        </div>
+        <div class="mom-reason" style="font-size:0.85rem;color:var(--text);margin:0.3rem 0">動能強，突破新高可追</div>
+        <div class="mom-factors" style="font-size:0.78rem;color:var(--muted)">近期高點附近、均線發散中、量能放大、RSI 56（有空間）、MACD 加速</div>
+        <div class="mom-levels">
+            <span class="mom-level">追價進場 <b>1880.0</b>（突破新高）</span>
+            <span class="mom-level" style="color:var(--red)">緊停損 <b>1748.74</b>（-4.7%）</span>
+            <span class="mom-level" style="color:var(--green)">目標 <b>2093.79</b>（+14.1%）</span>
+            <span class="mom-level">R:R 3.0 ✓</span>
+        </div>
+    </div>
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 8.2M</span>
+            <span>日均波幅 6.4%</span>
+            <span>昨振 4.9%</span>
+            <span class="dt-reasons">流動性充足、波幅 6.4%（大）、昨振 4.9%（大）</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">1916.9</b>　低 <b style="color:var(--green)">1753.1</b>　空間 8.9%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 1840.0</span>　<span style="color:var(--green)">昨低 1750.0</span>　<span>昨收 1835.0</span></span>
+            </div>
+        </div>
+    </div>
+
     
 
     <div class="metrics-grid">
@@ -7746,12 +8123,39 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <details class="stock-details">
     <summary class="stock-toggle">展開詳細分析</summary>
 
-    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">69.72</span><span class="cost-delta cost-down">-7.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">67.01</span><span class="cost-delta cost-down">-4.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">60.45</span><span class="cost-delta cost-up">+6.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">70.26</span><span class="cost-delta cost-down">-8.6% vs 現價</span></div></div><div class="cost-insight">籌碼結構中性，觀察量能變化</div></div>
+    <div class="cost-zone-box"><div class="cost-title">💰 主力成本區</div><div class="cost-grid"><div class="cost-item"><span class="cost-label">短期（VWAP5）</span><span class="cost-value">69.72</span><span class="cost-delta cost-down">-7.9% vs 現價</span></div><div class="cost-item"><span class="cost-label">中期（VWAP20）</span><span class="cost-value">67.01</span><span class="cost-delta cost-down">-4.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">長期（VWAP60）</span><span class="cost-value">60.45</span><span class="cost-delta cost-up">+6.2% vs 現價</span></div><div class="cost-item"><span class="cost-label">法人成本</span><span class="cost-value">69.12</span><span class="cost-delta cost-down">-7.1% vs 現價</span></div></div><div class="cost-insight">籌碼結構中性，觀察量能變化</div></div>
 
     <div class="money-flow-box">
         <div class="mf-title">💰 資金流向</div>
         <div class="mf-grid"><div class="mf-item"><span class="mf-label">MFI(14)</span><span class="mf-value" style="color:var(--green)">65.3</span><span class="mf-desc">流入</span></div><div class="mf-item"><span class="mf-label">CMF(20)</span><span class="mf-value" style="color:var(--red)">-0.049</span><span class="mf-desc">賣方略優</span></div></div>
         <div class="mf-insight">資金流入中；賣方略占上風；短長週期資金方向不一致，建議觀望；OBV 背離（主力可能吸貨）</div>
+    </div>
+
+    
+
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--green)">★★★★☆</span>
+            <span class="dt-score" style="color:var(--green)">4/5（非常適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 146.0M</span>
+            <span>日均波幅 8.9%</span>
+            <span>昨振 5.9%</span>
+            <span class="dt-reasons">流動性充足、波幅 8.9%（大）、昨振 5.9%（大）、趨勢明確</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">68.18</b>　低 <b style="color:var(--green)">60.22</b>　空間 12.4%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 65.5</span>　<span style="color:var(--green)">昨低 61.7</span>　<span>昨收 64.2</span></span>
+            </div>
+        </div>
     </div>
 
     
@@ -7772,7 +8176,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <div class="metric bullish"><span class="label">趨勢</span><span class="value">多頭排列</span></div>
         <div class="metric"><span class="label">主力成本(20日)</span><span class="value">67.01</span></div>
         <div class="metric"><span class="label">主力成本(60日)</span><span class="value">60.45</span></div>
-        <div class="metric"><span class="label">法人成本(估)</span><span class="value">70.26</span></div>
+        <div class="metric"><span class="label">法人成本(估)</span><span class="value">69.12</span></div>
         <div class="metric"><span class="label">本益比</span><span class="value">4.41</span></div>
         <div class="metric"><span class="label">殖利率</span><span class="value">N/A</span></div>
         <div class="metric"><span class="label">EPS</span><span class="value">N/A</span></div>
@@ -7812,11 +8216,11 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">自營商</span>
-                        <span class="inst-val" style="color:var(--green)">-1.1 萬張</span>
+                        <span class="inst-val" style="color:var(--green)">-1.0 萬張</span>
                     </div>
                     <div class="inst-card">
                         <span class="inst-label">合計</span>
-                        <span class="inst-val" style="color:var(--red)">+2.6 萬張</span>
+                        <span class="inst-val" style="color:var(--red)">+467 張</span>
                     </div><div class="inst-card">
                         <span class="inst-label">外資動態</span>
                         <span class="inst-val" style="color:var(--green)">連買 2 天</span>
@@ -7866,8 +8270,8 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
                         <td>04/17</td>
                         <td style="color:var(--red)">+2.6 萬張</td>
                         <td style="color:var(--muted)">+0 張</td>
-                        <td style="color:var(--green)">-533 張</td>
-                        <td style="color:var(--red)">+2.6 萬張</td>
+                        <td style="color:var(--muted)">+0 張</td>
+                        <td style="color:var(--muted)">+0 張</td>
                     </tr><tr>
                         <td>04/16</td>
                         <td style="color:var(--green)">-3.6 千張</td>
@@ -8432,6 +8836,33 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     
 
+    <div class="day-trade-box">
+        <div class="dt-header">
+            <span class="dt-title">🎯 當沖適合度</span>
+            <span class="dt-stars" style="color:var(--accent)">★★★☆☆</span>
+            <span class="dt-score" style="color:var(--accent)">3/5（適合）</span>
+        </div>
+        <div class="dt-meta">
+            <span>日均量 68.3M</span>
+            <span>日均波幅 8.1%</span>
+            <span>昨振 5.6%</span>
+            <span class="dt-reasons">流動性充足、波幅 8.1%（大）、昨振 5.6%（大）</span>
+        </div>
+        
+        <div class="dt-levels">
+            <div class="dt-level-group">
+                <span class="dt-level-title">📊 日內波幅預估</span>
+                <span class="dt-est">預估高 <b style="color:var(--red)">114.12</b>　低 <b style="color:var(--green)">101.88</b>　空間 11.3%</span>
+            </div>
+            <div class="dt-level-group">
+                <span class="dt-level-title">📋 當沖關鍵價位</span>
+                <span class="dt-key"><span style="color:var(--red)">昨高 110.0</span>　<span style="color:var(--green)">昨低 104.0</span>　<span>昨收 108.0</span></span>
+            </div>
+        </div>
+    </div>
+
+    
+
     <div class="metrics-grid">
         <div class="metric"><span class="label">收盤價</span><span class="value">108.00</span></div>
         <div class="metric"><span class="label">MA5/20/60</span><span class="value">111.60 / 110.23 / 104.54</span></div>
@@ -8931,7 +9362,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-27 18:01
+    Stock Analysis CLI | 報告自動產生於 2026-04-27 18:34
 </footer>
 
 <script>
