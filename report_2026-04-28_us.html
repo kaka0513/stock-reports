@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>股票分析報告 - 2026-04-28 13:49</title>
+<title>股票分析報告 - 2026-04-28 18:08</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js"></script>
@@ -275,6 +275,25 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 .signal-light-box.signal-red { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); }
 .signal-icon { font-size: 1.5rem; }
 .signal-text { color: var(--text); font-weight: 600; }
+.decision-box { padding: 0.8rem 1rem; background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(139,92,246,0.05)); border: 1px solid rgba(96,165,250,0.3); border-radius: 10px; margin-bottom: 0.8rem; }
+.decision-box .dec-header { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.decision-box .dec-title { font-weight: 700; color: var(--accent); font-size: 0.9rem; }
+.decision-box .dec-conf { font-size: 0.9rem; }
+.decision-box .dec-conf b { font-size: 1.2rem; }
+.decision-box .dec-urg { font-size: 0.78rem; padding: 0.15rem 0.5rem; border-radius: 10px; background: rgba(0,0,0,0.2); }
+.decision-box .dec-type { font-size: 0.78rem; color: var(--muted); background: rgba(0,0,0,0.15); padding: 0.15rem 0.5rem; border-radius: 10px; }
+.decision-box .dec-bars { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.decision-box .dec-bar-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; color: var(--muted); flex: 1; min-width: 100px; }
+.decision-box .dec-bar-label { min-width: 24px; }
+.decision-box .dec-bar-track { flex: 1; height: 6px; background: rgba(0,0,0,0.3); border-radius: 3px; overflow: hidden; }
+.decision-box .dec-bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+.decision-box .dec-bar-val { min-width: 20px; text-align: right; font-weight: 600; color: var(--text); }
+.decision-box .dec-inv { margin-top: 0.4rem; font-size: 0.82rem; color: var(--red); padding: 0.3rem 0; }
+.decision-box .dec-inv-label { font-weight: 700; margin-right: 0.4rem; }
+.decision-box .dec-trigger { font-size: 0.82rem; color: var(--green); padding: 0.2rem 0; }
+.decision-box .dec-trigger.dec-secondary { color: var(--muted); }
+.decision-box .dec-trigger-label { font-weight: 700; margin-right: 0.4rem; }
+@media (max-width: 768px) { .decision-box .dec-bars { flex-direction: column; } .decision-box .dec-bar-item { min-width: unset; } }
 .stock-details-trading { margin-top: 0.3rem; }
 .lazy-summary { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
 .lazy-summary h4 { color: var(--accent); margin-bottom: 0.6rem; }
@@ -369,7 +388,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 <div id="top"></div>
 <h1>股票分析報告 <span class="badge" style="background:rgba(96,165,250,0.25);color:var(--accent);font-size:0.75rem;vertical-align:middle">公開觀察版</span></h1>
-<p class="subtitle">2026-04-28 13:49　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
+<p class="subtitle">2026-04-28 18:08　<a href="index.html" style="color:var(--accent);font-size:0.85rem">← 返回報告清單</a></p>
 
 <div class="summary-bar">
     <div class="stat"><div class="num">13</div><div class="label">分析股票數</div></div>
@@ -471,6 +490,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="signal-light-box signal-green">
         <span class="signal-icon">🟢</span>
         <span class="signal-text">已在買入區間（均線 87 以下），可分批進場，停損 66</span>
+    </div>
+
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--red)">信心 <b>26</b>/100（極低信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">短波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:10%;background:var(--red)"></div></div><span class="dec-bar-val">10</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:35%;background:var(--red)"></div></div><span class="dec-bar-val">35</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>66.47</b>（跌破停損位）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>100.94</b>（突破布林上軌）&rarr; 買入</div>
     </div>
 
     <details class="stock-details-trading">
@@ -1080,6 +1111,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">守穩 133 可持續觀察，跌破則轉弱</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>53</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">短波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:50%;background:var(--yellow)"></div></div><span class="dec-bar-val">50</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:65%;background:var(--yellow)"></div></div><span class="dec-bar-val">65</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>133.49</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>185.17</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>81.8</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -1687,6 +1730,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">可在 10 附近分批買入，跌破 10 停損，目標 12</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>65</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:100%;background:var(--green)"></div></div><span class="dec-bar-val">100</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>9.81</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -2280,6 +2335,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="signal-light-box signal-red">
         <span class="signal-icon">🔴</span>
         <span class="signal-text">短線過熱，不建議追高，等拉回至 70 再考慮</span>
+    </div>
+
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>60</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--yellow)">&#x1F7E0; 今日</span>
+            <span class="dec-type">觀望</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:70%;background:var(--green)"></div></div><span class="dec-bar-val">70</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>72.55</b>（跌破停損位）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>111.86</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>28.25</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
     </div>
 
     <details class="stock-details-trading">
@@ -2877,6 +2944,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">守穩 102 可持續觀察，跌破則轉弱</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>66</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>101.68</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>136.23</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>67.14</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -3033,7 +3112,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/jim-cramer-reveals-whether-coreweave-140117732.html" target="_blank" rel="noopener">Jim Cramer Reveals Whether CoreWeave (CRWV) Was a Short Squeeze or Not</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/sectors/technology/articles/coreweave-crwv-partners-anthropic-infrastructure-061933857.html" target="_blank" rel="noopener">CoreWeave (CRWV) Partners with Anthropic to Provide Infrastructure for Claude AI Models</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/26</span><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-inc-crwv-good-stock-202023890.html" target="_blank" rel="noopener">Is CoreWeave, Inc. (CRWV) A Good Stock To Buy Now?</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/25</span><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-valuation-check-recent-170728842.html" target="_blank" rel="noopener">CoreWeave (CRWV) Valuation Check After Recent Momentum And Pullback</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/24</span><a href="https://finance.yahoo.com/sectors/technology/articles/amazon-microsoft-alphabet-oracle-coreweave-160300688.html" target="_blank" rel="noopener">Amazon, Microsoft and other Big Tech giants seen as key AI compute beneficiaries after Google Cloud Next</a> <span class="news-pub">- Proactive</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/buy-coreweave-stock-may-7-081000958.html" target="_blank" rel="noopener">Should You Buy CoreWeave Stock Before May 7?</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-anthropic-deal-deepens-ai-070452001.html" target="_blank" rel="noopener">CoreWeave Anthropic Deal Deepens AI Ties While Raising Capital Questions</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-inc-crwv-appears-attractive-064917366.html" target="_blank" rel="noopener">CoreWeave Inc. (CRWV) Appears Attractive with Recent Large-Scale Contracts</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/projected-ai-infrastructure-demand-bodes-064915528.html" target="_blank" rel="noopener">Projected AI Infrastructure Demand Bodes Well for Nebius Group N.V. (NBIS)</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/jim-cramer-reveals-whether-coreweave-140117732.html" target="_blank" rel="noopener">Jim Cramer Reveals Whether CoreWeave (CRWV) Was a Short Squeeze or Not</a> <span class="news-pub">- Insider Monkey</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-4"></canvas></div>
@@ -3472,6 +3551,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">守穩 138 可持續觀察，跌破則轉弱</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>68</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:65%;background:var(--yellow)"></div></div><span class="dec-bar-val">65</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>138.49</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>185.63</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>91.35</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -3640,7 +3731,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/nebius-ai-cloud-3-5-220633293.html" target="_blank" rel="noopener">Nebius AI Cloud 3.5 Launch Tests Rich Valuation And Growth Hopes</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/sectors/technology/articles/why-nebius-nbis-one-best-061923458.html" target="_blank" rel="noopener">Here is Why Nebius (NBIS) is One of the Best Technology Stocks to Buy for the Next Decade</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/22</span><a href="https://finance.yahoo.com/markets/stocks/articles/under-radar-ai-stock-already-185600173.html" target="_blank" rel="noopener">This Under-the-Radar AI Stock Is Already Up 87% in 2026</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/22</span><a href="https://finance.yahoo.com/markets/stocks/articles/nebius-vs-oracle-ai-cloud-163200654.html" target="_blank" rel="noopener">Nebius vs. Oracle: Which AI Cloud Stock Is the Better Buy?</a> <span class="news-pub">- Zacks</span></li><li><span class="news-date">04/21</span><a href="https://finance.yahoo.com/markets/stocks/articles/better-buy-coreweave-vs-nebius-173500194.html" target="_blank" rel="noopener">Better Buy: CoreWeave vs. Nebius Stock</a> <span class="news-pub">- Motley Fool</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/projected-ai-infrastructure-demand-bodes-064915528.html" target="_blank" rel="noopener">Projected AI Infrastructure Demand Bodes Well for Nebius Group N.V. (NBIS)</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/nebius-ai-cloud-3-5-220633293.html" target="_blank" rel="noopener">Nebius AI Cloud 3.5 Launch Tests Rich Valuation And Growth Hopes</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/sectors/technology/articles/why-nebius-nbis-one-best-061923458.html" target="_blank" rel="noopener">Here is Why Nebius (NBIS) is One of the Best Technology Stocks to Buy for the Next Decade</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/22</span><a href="https://finance.yahoo.com/markets/stocks/articles/under-radar-ai-stock-already-185600173.html" target="_blank" rel="noopener">This Under-the-Radar AI Stock Is Already Up 87% in 2026</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/22</span><a href="https://finance.yahoo.com/markets/stocks/articles/nebius-vs-oracle-ai-cloud-163200654.html" target="_blank" rel="noopener">Nebius vs. Oracle: Which AI Cloud Stock Is the Better Buy?</a> <span class="news-pub">- Zacks</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-5"></canvas></div>
@@ -4079,6 +4170,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">可在 142 附近分批買入，跌破 133 停損，目標 156</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>52</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:65%;background:var(--yellow)"></div></div><span class="dec-bar-val">65</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>142.38</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -4235,7 +4338,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/why-may-could-turning-point-223000479.html" target="_blank" rel="noopener">Why May Could Be a Turning Point for Palantir Stock</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="" target="_blank" rel="noopener">Pentagon Adds Alphabet’s Gemini to Its AI Toolbelt. What That Means for Palantir.</a> <span class="news-pub">- Barrons.com</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/irs-palantir-partnership-draws-critical-181244774.html" target="_blank" rel="noopener">New Info on an IRS-Palantir Partnership Draws Critical Questions, but Could It Move the Needle for PLTR Stock?</a> <span class="news-pub">- Barchart</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/news/khan-could-block-palantir-scotland-173204956.html" target="_blank" rel="noopener">Khan could block Palantir from Scotland Yard contract</a> <span class="news-pub">- The Telegraph</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-stock-more-likely-165000341.html" target="_blank" rel="noopener">Is Palantir Technologies Stock More Likely to Hit $100 or $200?</a> <span class="news-pub">- Motley Fool</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/prediction-palantir-stock-going-plunge-092600384.html" target="_blank" rel="noopener">Prediction: Palantir Stock Is Going to Plunge on May 5</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/buy-1-artificial-intelligence-ai-085600909.html" target="_blank" rel="noopener">Buy 1 Artificial Intelligence (AI) Stock With More Upside Than Palantir, According to Wall Street Analysts</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/palantir-irs-role-weighs-privacy-070526496.html" target="_blank" rel="noopener">Palantir’s IRS Role Weighs On Privacy Concerns And Rich Valuation</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/why-may-could-turning-point-223000479.html" target="_blank" rel="noopener">Why May Could Be a Turning Point for Palantir Stock</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="" target="_blank" rel="noopener">Pentagon Adds Alphabet’s Gemini to Its AI Toolbelt. What That Means for Palantir.</a> <span class="news-pub">- Barrons.com</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-6"></canvas></div>
@@ -4672,6 +4775,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="signal-light-box signal-yellow">
         <span class="signal-icon">🟡</span>
         <span class="signal-text">守穩 10 可持續觀察，跌破則轉弱</span>
+    </div>
+
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>74</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>10.36</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>13.23</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>7.49</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
     </div>
 
     <details class="stock-details-trading">
@@ -5281,6 +5396,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">可在 370 附近分批買入，跌破 352 停損，目標 414</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>61</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:100%;background:var(--green)"></div></div><span class="dec-bar-val">100</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>369.97</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -5405,7 +5532,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">短期均線翻揚但中長期未同步</span><span class="signal">K 線上穿 D 線（黃金交叉）</span></div>
 
-    <ul class="assessments"><li>本益比 344.2（過高，注意風險）</li><li>PEG 5.14（偏貴）</li><li>PB 17.29（偏高）</li><li>EPS 1.10（獲利中）</li><li>獲利成長 +8.3%</li><li>估值 100.09（高估 278%）</li></ul>
+    <ul class="assessments"><li>本益比 344.2（過高，注意風險）</li><li>PEG 5.19（偏貴）</li><li>PB 17.29（偏高）</li><li>EPS 1.10（獲利中）</li><li>獲利成長 +8.3%</li><li>估值 100.09（高估 278%）</li></ul>
 
     <div class="valuation-box">
         <div class="val-header">
@@ -5449,7 +5576,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-inc-tsla-falls-shy-043823224.html" target="_blank" rel="noopener">Tesla, Inc. (TSLA) Falls Shy of Revenue, Beats on Profit in Q1</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/uber-ceo-strong-2-word-003700887.html" target="_blank" rel="noopener">Uber CEO has a strong 2-word message for investors</a> <span class="news-pub">- TheStreet</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/elon-musk-reportedly-used-spacex-223106076.html" target="_blank" rel="noopener">Elon Musk Reportedly Used SpaceX As 'Piggy Bank' To Give Himself, Tesla A Leg Up</a> <span class="news-pub">- Benzinga</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/earnings-season-surprises-213501483.html" target="_blank" rel="noopener">Earnings Season Surprises</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/teslas-earnings-were-underwhelming-heres-212000064.html" target="_blank" rel="noopener">Tesla's Earnings Were Underwhelming. Here's Why They're Not Likely to Weigh Down the Stock</a> <span class="news-pub">- Motley Fool</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/video/chinas-chery-aims-toyota-plus-085854079.html" target="_blank" rel="noopener">China's Chery aims to be 'Toyota plus Tesla' in global growth push</a> <span class="news-pub">- Reuters Videos</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-inc-tsla-falls-shy-043823224.html" target="_blank" rel="noopener">Tesla, Inc. (TSLA) Falls Shy of Revenue, Beats on Profit in Q1</a> <span class="news-pub">- Insider Monkey</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/uber-ceo-strong-2-word-003700887.html" target="_blank" rel="noopener">Uber CEO has a strong 2-word message for investors</a> <span class="news-pub">- TheStreet</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/tesla-stock-wall-street-bullish-002307545.html" target="_blank" rel="noopener">Tesla Stock: Is Wall Street Bullish or Bearish?</a> <span class="news-pub">- Barchart</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/elon-musk-reportedly-used-spacex-223106076.html" target="_blank" rel="noopener">Elon Musk Reportedly Used SpaceX As 'Piggy Bank' To Give Himself, Tesla A Leg Up</a> <span class="news-pub">- Benzinga</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-8"></canvas></div>
@@ -5888,6 +6015,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">短線過熱，不建議追高，等拉回至 417 再考慮</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>53</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">觀望</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:60%;background:var(--yellow)"></div></div><span class="dec-bar-val">60</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>416.83</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>467.79</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>365.86</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -6009,7 +6148,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
     <div class="signals"><span class="signal">均線多頭排列（MA5>MA20>MA60）</span><span class="signal">Williams %R=-12.9 超買區（> -20）</span><span class="signal">WR 雙線共振超買（7/14/28 日）：-26/-13/-13</span></div>
 
-    <ul class="assessments"><li>PEG 3.70（偏貴）</li><li>PB 26.01（偏高）</li><li>ROE -4.1%（虧損）</li><li>EPS -0.64（虧損中）</li><li>估值 354.69（高估 28%）</li></ul>
+    <ul class="assessments"><li>PEG 3.75（偏貴）</li><li>PB 26.01（偏高）</li><li>ROE -4.1%（虧損）</li><li>EPS -0.64（虧損中）</li><li>估值 354.69（高估 28%）</li></ul>
 
     <div class="valuation-box">
         <div class="val-header">
@@ -6490,6 +6629,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="signal-light-box signal-yellow">
         <span class="signal-icon">🟡</span>
         <span class="signal-text">守穩 74 可持續觀察，跌破則轉弱</span>
+    </div>
+
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>58</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>74.48</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>93.3</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>55.66</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
     </div>
 
     <details class="stock-details-trading">
@@ -7085,6 +7236,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
     <div class="signal-light-box signal-yellow">
         <span class="signal-icon">🟡</span>
         <span class="signal-text">守穩 5 可持續觀察，跌破則轉弱</span>
+    </div>
+
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>66</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:75%;background:var(--green)"></div></div><span class="dec-bar-val">75</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:30%;background:var(--red)"></div></div><span class="dec-bar-val">30</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:95%;background:var(--green)"></div></div><span class="dec-bar-val">95</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>6.26</b>（跌破停損位）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>7.88</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>2.7</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
     </div>
 
     <details class="stock-details-trading">
@@ -7703,6 +7866,18 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
         <span class="signal-text">守穩 8 可持續觀察，跌破則轉弱</span>
     </div>
 
+    <div class="decision-box">
+        <div class="dec-header">
+            <span class="dec-title">&#x1F4CB; 決策摘要</span>
+            <span class="dec-conf" style="color:var(--accent)">信心 <b>70</b>/100（中等信心）</span>
+            <span class="dec-urg" style="color:var(--muted)">&#x1F7E2; 正常</span>
+            <span class="dec-type">短波段</span>
+        </div>
+        <div class="dec-bars"><div class="dec-bar-item"><span class="dec-bar-label">趨勢</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:50%;background:var(--yellow)"></div></div><span class="dec-bar-val">50</span></div><div class="dec-bar-item"><span class="dec-bar-label">量能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:100%;background:var(--green)"></div></div><span class="dec-bar-val">100</span></div><div class="dec-bar-item"><span class="dec-bar-label">動能</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:65%;background:var(--yellow)"></div></div><span class="dec-bar-val">65</span></div><div class="dec-bar-item"><span class="dec-bar-label">波動</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:90%;background:var(--green)"></div></div><span class="dec-bar-val">90</span></div><div class="dec-bar-item"><span class="dec-bar-label">R:R</span><div class="dec-bar-track"><div class="dec-bar-fill" style="width:40%;background:var(--yellow)"></div></div><span class="dec-bar-val">40</span></div></div>
+        <div class="dec-inv"><span class="dec-inv-label">&#x26D4; 失效條件</span>跌破 <b>7.8</b>（跌破 20 日均線）&rarr; 取消買入計劃</div>
+        <div class="dec-trigger"><span class="dec-trigger-label">&#x23ED; 下一觸發</span><b>12.97</b>（突破布林上軌）&rarr; 買入</div><div class="dec-trigger dec-secondary"><span class="dec-trigger-label">&#x23ED; 備選觸發</span><b>2.64</b>（跌至布林下軌（超跌買入））&rarr; 買入</div>
+    </div>
+
     <details class="stock-details-trading">
     <summary class="stock-toggle">▶ 交易計劃與分析</summary>
 
@@ -7871,7 +8046,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
             </div>
             <div class="pred-disclaimer">僅供參考，基於歷史趨勢與技術指標推算，非投資建議。</div></div>
 
-    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/why-marvell-technology-mrvl-stock-030055534.html" target="_blank" rel="noopener">Why Marvell Technology (MRVL) Stock Is Falling Today</a> <span class="news-pub">- StockStory</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/marvell-poet-dispute-tests-confidentiality-011216893.html" target="_blank" rel="noopener">Marvell POET Dispute Tests Confidentiality Stance In AI Data Center Story</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/poet-technologies-plummeted-today-stock-232103860.html" target="_blank" rel="noopener">Poet Technologies Plummeted Today -- Is the Stock a Buy Right Now?</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/poet-technologies-stock-crashed-marvell-212432764.html" target="_blank" rel="noopener">Poet Technologies Stock Crashed After Marvell Canceled Orders: What Comes Next?</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/marvell-technology-just-sent-poet-205108765.html" target="_blank" rel="noopener">Marvell Technology Just Sent POET Stock Plummeting. What Comes Next?</a> <span class="news-pub">- Barchart</span></li></ul></div>
+    <div class="news-section"><div class="news-title">相關新聞</div><ul class="news-list"><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/marvell-order-cancellation-tests-poet-060513926.html" target="_blank" rel="noopener">Marvell Order Cancellation Tests POET Technologies Growth Story And Key Partnerships</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/why-marvell-technology-mrvl-stock-030055534.html" target="_blank" rel="noopener">Why Marvell Technology (MRVL) Stock Is Falling Today</a> <span class="news-pub">- StockStory</span></li><li><span class="news-date">04/28</span><a href="https://finance.yahoo.com/markets/stocks/articles/marvell-poet-dispute-tests-confidentiality-011216893.html" target="_blank" rel="noopener">Marvell POET Dispute Tests Confidentiality Stance In AI Data Center Story</a> <span class="news-pub">- Simply Wall St.</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/poet-technologies-plummeted-today-stock-232103860.html" target="_blank" rel="noopener">Poet Technologies Plummeted Today -- Is the Stock a Buy Right Now?</a> <span class="news-pub">- Motley Fool</span></li><li><span class="news-date">04/27</span><a href="https://finance.yahoo.com/markets/stocks/articles/poet-technologies-stock-crashed-marvell-212432764.html" target="_blank" rel="noopener">Poet Technologies Stock Crashed After Marvell Canceled Orders: What Comes Next?</a> <span class="news-pub">- Motley Fool</span></li></ul></div>
 
     <div class="charts-stack">
         <div class="chart-row main"><canvas id="price-vol-12"></canvas></div>
@@ -8301,7 +8476,7 @@ h1 { text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem; }
 
 
 <footer style="text-align:center; color:var(--muted); margin-top:3rem; font-size:0.8rem;">
-    Stock Analysis CLI | 報告自動產生於 2026-04-28 13:49
+    Stock Analysis CLI | 報告自動產生於 2026-04-28 18:08
 </footer>
 
 <script>
